@@ -33,7 +33,9 @@ Formal presentation on core TeX features. If you are looking for an introductory
 
 ### Artificial Intelligence and Machine Learning
 
+> Reinforcement Learning by David Silver
 
+Detailed notes and quality lecture videos with plenty examples and rigorous mathematical proofs.
 
 ---
 
@@ -41,7 +43,8 @@ Formal presentation on core TeX features. If you are looking for an introductory
 
 > Linear Algebra and Its Applications by Peter Lax
 
-Getting through linear algebra, abstract algebra, numerical algebra, linear function analysis ...and more in only one book.
+Getting through linear algebra, abstract algebra, numerical algebra, linear functional analysis ...and more in only one book.
 
+> Principles of Mathematical Analysis by Walter Rudin
 
-
+A comprehensive introduction to mathematical analysis, 
