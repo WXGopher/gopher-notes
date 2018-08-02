@@ -15,11 +15,11 @@ An awesome book to start with on programming/general computer science. Also refe
 
 > The Linux Command Line by William E. Shotts, Jr.
 
-A great material on get started with working on Linux.
+A great material on getting started with working on Linux.
 
 > How Linux Works: What Every Superuser Should Know by Brain Ward
 
-A bit in-depth introduction on Linux/OS internals.
+A bit in-depth introduction to Linux/OS internals.
 
 > The LaTeX Primer by Indian TeX Group
 
