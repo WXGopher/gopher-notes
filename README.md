@@ -30,7 +30,7 @@ Although this book was written almost 20 years ago, it only covered core OS conc
 
 > The Linux Command Line by William E. Shotts, Jr.
 
-A great material on getting started with working on Linux.
+A great material on getting started with working with Linux.
 
 > How Linux Works: What Every Superuser Should Know by Brain Ward
 
@@ -38,7 +38,7 @@ A bit in-depth introduction to Linux/OS internals.
 
 > The LaTeX Primer by Indian TeX Group
 
-Formal presentation on core TeX features. If you are looking for an introductory material on TeX, this is the one for you.
+A formal presentation on core TeX features. If you are looking for an introductory material on TeX, this is the one for you.
 
 > A Tour of C++ by Bjarne Strousturp
 
@@ -58,7 +58,7 @@ A comprehensive course on C++11/14 with quality exercises.
 
 > Confluence of Computer Vision and Computer Graphics by Ales Leonardis et al.
 
-Paper collections on CV/CG research in beginning of 21st century. 
+Paper collections on CV/CG research in the beginning of 21st century. 
 
 > The Art of 3D Computer Animation and Effects by Issaac Kerlow
 
@@ -70,7 +70,7 @@ Written by "dalao" (XD) from Disney introducing animation film industry and anim
 
 > Reinforcement Learning by David Silver
 
-Detailed notes and quality lecture videos with plenty of examples and rigorous mathematical proofs.
+Detailed notes and quality lecture videos with a plenty of examples and rigorous mathematical proofs.
 
 
 
@@ -92,11 +92,11 @@ A neat (and thin) book on introduction to mathematical analysis and linear funct
 
 > Numerical Solution of Time-Dependent Advection-Diffusion-Reaction Equations by Jan Verwer and Williem Hundsdorfer
 
-A comprehensive book on Method of Lines on parabolic PDEs.
+A comprehensive book on the Method of Lines on parabolic PDEs.
 
 > Computational Geometry: Algorithms and Applications by De Berg Mark et al.
 
-A really nice textbook with examples on applications. You might have seen this is the textbook for several computational geometry courses, and there IS a reason for that :)
+A really nice textbook with examples on applications. You might have seen this being the textbook for several computational geometry courses, and there IS a reason for that :)
 
 >  The Algebraic Eigenvalue Problem by James Wilkinson
 
@@ -108,4 +108,4 @@ Rank up to graduate level analysis through completing this book series :)
 
 > Celestial Encounters: The Origins of Chaos and Stability by Florin Diacu and Phillip Holmes
 
-Informal presentation on the Differential Dynamical Systems. You can also find a looooot of anecdotes of those lovely mathemagitians.
+An informal presentation on the Differential Dynamical Systems. You can also find a looooot of anecdotes of those lovely mathemagitians.
