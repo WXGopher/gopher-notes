@@ -70,7 +70,7 @@ Written by "dalao" (XD) from Disney introducing animation film industry and anim
 
 > Reinforcement Learning by David Silver
 
-Detailed notes and quality lecture videos with plenty examples and rigorous mathematical proofs.
+Detailed notes and quality lecture videos with plenty of examples and rigorous mathematical proofs.
 
 
 
