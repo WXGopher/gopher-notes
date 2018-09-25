@@ -48,7 +48,13 @@ Concise yet in-depth overview of C++(11) features.
 
 A comprehensive course on C++11/14 with quality exercises.
 
+> The Python Tutorial/ The Python Reference by Guido van Rossum
 
+THE authentic guide to Python programming. 
+
+> Fluent Python by Luciano Ramalho
+
+Including advanced Python programming techniques, clear guide to Pythonic coding and design patterns.
 
 ### Computer Graphics and Computer Vision
 
