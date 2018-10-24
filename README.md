@@ -70,7 +70,9 @@ Paper collections on CV/CG research in the beginning of 21st century.
 
 Written by "dalao" (XD) from Disney introducing animation film industry and animation techniques. A supplementary material would be "Computer Animation: Algorithms & Techniques by Rich Parent" (but this book is a bit dated).
 
+> Nonlinear Continuum Mechanics for Finite Element Analysis by Bonet and Wood
 
+Deformable object, elastic material simulation.
 
 ### Artificial Intelligence and Machine Learning
 
