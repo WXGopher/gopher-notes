@@ -42,7 +42,7 @@ A formal presentation on core TeX features. If you are looking for an introducto
 
 > A Tour of C++ by Bjarne Strousturp
 
-Concise yet in-depth overview of C++(11) features.
+Concise yet in-depth overview of C++(17 and even 20) features.
 
 > [LearnCpp.com](http://learncpp.com) by Alex
 
@@ -55,6 +55,10 @@ THE authentic guide to Python programming.
 > Fluent Python by Luciano Ramalho
 
 Including advanced Python programming techniques, clear guide to Pythonic coding and design patterns.
+
+> Effective C++/More Effective C++/Effective Modern C++ by Scott Meyers
+
+As C++ being such a pain in the ass, this series introduces C++ programming tricks and pitfalls. Also refer to [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines).
 
 ### Computer Graphics and Computer Vision
 
@@ -74,17 +78,27 @@ Written by "dalao" (XD) from Disney introducing animation film industry and anim
 
 Deformable object, elastic material simulation.
 
+> Foundations of Physically Based Modeling and Animation by Ronald House and John Keyser
+
+"Physics modelling 101" (mass-spring systems, particle-based systems, deformable object simulations and all you need to know)
+
 ### Artificial Intelligence and Machine Learning
 
 > Reinforcement Learning by David Silver
 
 Detailed notes and quality lecture videos with a plenty of examples and rigorous mathematical proofs.
 
+> Pattern Recognition and Machine Learning by Christopher Bishop
+
+Recommending this book is a sort of cliche; however, I wish to remind you the exercises are not freakishly hard to solve as compared with its frequently mentioned counterpart -- The elements of statistical learning, a book written by J. Friedman, which is I believe written for statisticians not programmers. 
+
 
 
 ---
 
 ## Mathematics
+
+### Pure Mathematics
 
 > Linear Algebra and Its Applications by Peter Lax
 
@@ -98,6 +112,17 @@ A comprehensive introduction to mathematical analysis.
 
 A neat (and thin) book on introduction to mathematical analysis and linear functional analysis.
 
+
+> Princeton Lectures in Analysis I~IV by Elias Stein and Rami Shakarchi
+
+Rank up to graduate level analysis through completing this book series :)
+
+> Celestial Encounters: The Origins of Chaos and Stability by Florin Diacu and Phillip Holmes
+
+An informal presentation on the Differential Dynamical Systems. You can also find a looooot of anecdotes of those lovely mathemagitians.
+
+### Applied Mathematics
+
 > Numerical Solution of Time-Dependent Advection-Diffusion-Reaction Equations by Jan Verwer and Williem Hundsdorfer
 
 A comprehensive book on the Method of Lines on parabolic PDEs.
@@ -110,10 +135,6 @@ A really nice textbook with examples on applications. You might have seen this b
 
 A classical reference on numerical eigenvalue problems with plentiful examples.
 
-> Princeton Lectures in Analysis I~IV by Elias Stein and Rami Shakarchi
+> Convex Optimization by Stephen Boyd
 
-Rank up to graduate level analysis through completing this book series :)
-
-> Celestial Encounters: The Origins of Chaos and Stability by Florin Diacu and Phillip Holmes
-
-An informal presentation on the Differential Dynamical Systems. You can also find a looooot of anecdotes of those lovely mathemagitians.
+This book is derived from (an excellent course) [EE364](http://ee364a.stanford.edu) from Stanford.
