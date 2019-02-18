@@ -1,6 +1,6 @@
 # gopher-notes
 
-## Here is what I usually do when I was boring...
+## Here is what I usually do when I am boring...
 
 
 
