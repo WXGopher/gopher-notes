@@ -68,6 +68,10 @@ Including advanced Python programming techniques, clear guide to Pythonic coding
 
 As C++ being such a pain in the ass, this series introduces C++ programming tricks and pitfalls. Also refer to [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines).
 
+> The 	CMake [Tutorial](https://cmake.org/cmake-tutorial/)
+
+A step-by-step guide for using CMake.
+
 ### Computer Graphics and Computer Vision
 
 > Fluid Simulation for Computer Graphics by Robert Bridson
