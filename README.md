@@ -150,3 +150,16 @@ A classical reference on numerical eigenvalue problems with plentiful examples.
 > Convex Optimization by Stephen Boyd
 
 This book is derived from (an excellent course) [EE364](http://ee364a.stanford.edu) from Stanford.
+
+---
+
+## Lecture Notes
+
+> [FEM Simulation of 3D Deformable Solids: A practitioner's guide to theory, discretization and model reduction](http://femdefo.org/)
+
+Continuum mechanics for computer graphics.
+
+> [An introduction to physically based animation](http://www.cs.ucr.edu/~shinar/papers/2018_introduction_to_pba.pdf)
+
+Physics simulation 101.
+
