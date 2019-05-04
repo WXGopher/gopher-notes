@@ -52,6 +52,10 @@ A formal presentation on core TeX features. If you are looking for an introducto
 
 Concise yet in-depth overview of C++(17 and even 20) features.
 
+> [500 Lines or less](<https://github.com/aosabook/500lines>)
+
+If you want to read some illustrative and inspiring (especially Python) codes, this is a good one.
+
 > [LearnCpp.com](http://learncpp.com) by Alex
 
 A comprehensive course on C++11/14 with quality exercises.
@@ -153,7 +157,7 @@ This book is derived from (an excellent course) [EE364](http://ee364a.stanford.e
 
 ---
 
-## Lecture Notes
+## Lecture Notes/Courses
 
 > [FEM Simulation of 3D Deformable Solids: A practitioner's guide to theory, discretization and model reduction](http://femdefo.org/)
 
@@ -163,3 +167,6 @@ Continuum mechanics for computer graphics.
 
 Physics simulation 101.
 
+> Physics based animation by Ladislav Kavan
+
+Quite a contingent material if you are doing this.
