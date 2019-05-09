@@ -1,0 +1,112 @@
+\documentclass{fancydoc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+%\hypersetup{
+%	colorlinks=true,
+%	linkcolor=blue,
+%	filecolor=magenta,      
+%	urlcolor=cyan,
+%}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{thm}{Theorem}
+\newtheorem{note}{Note}
+\newtheorem{ex}{Example}
+
+\begin{document}
+
+\title{Ladislav Kavan's Physically Based Simulation 2017ed}
+\author{Edited by wxgopher}
+%
+%\maketitle
+%\tableofcontents
+%\newpage
+%{\large This lecture note is based on Dr. Ladislav Kavan's Physics-based Animation course CS6660, originally taught at the University of Utah. I also try to include some supplementary materials from other resources.}
+%
+%
+%{\large Warning: Although as I strive to make this material useful, there are certain bugs, use this material at your own risk. I would also be grateful to hear \href{mailto:wxguojlu@gmail.com}{feedbacks}.}
+%
+%\dotfill
+
+\section{Classical Mechanics}
+
+\subsection{Basics: a harmonic oscillator}
+
+\section{Time Integration}
+
+\section{Optimization}
+\subsection{Implicit Newmark}
+
+\begin{subequations}
+	\begin{align}
+	x_{n+1} &= x_n + \frac{h}{2}(v_n + v_{n+1})\\
+	v_{n+1} &= v_n = \frac{h}{2}(f_n + f_{n+1})
+	\end{align}
+\end{subequations}
+where $x$ and $v$ are positions and velocities, and $f_n \equiv f(x_n)$. Thus we have
+\begin{equation}\label{secoptim:nw_eq}
+x_{n+1} - x_n - hv_n = \frac{h^2}{4}(f_n + f_{n+1})
+\end{equation}
+
+Let $y = x_n + h_nv_n + \frac{h^2}{4}f_n$, $x_{n+1} = x$, note that $\nabla E = -f$, then \eqref{secoptim:nw_eq} becomes
+
+\begin{equation}
+x - y = \frac{h^2}{4}f \Rightarrow x - y + \frac{h^2}{4}f\nabla E = 0
+\end{equation}
+
+Let $g(x) = \frac{1}{2}\Vert x-y\vert^2 + \frac{h^2}{4}E$, then solving $g$ equals to solve $x$ for
+\begin{equation}
+\min_{x} \quad g(x)
+\end{equation}
+
+\subsection{Optimization Problems}
+Problem formulation:
+\begin{equation}
+\min_{_x} \quad g(x), \quad x\in \!R^n, \quad g\in \!R.
+\end{equation}
+
+Optimization problems can be categorized into constrained or unconstrained problems, or convex or non-convex problems. 
+
+\begin{thm}
+	For a convex problem (where both objective and feasible set are convex), if the objective is $\!C^2$, then the Hessian $H \succeq 0$, and the local minimum is the global minimum.
+\end{thm}
+
+\begin{mydef}
+	A linear programming (LP) is a problem with linear objective and linear equality or inequality constraints. A quadratic programming (QP) is {\bf the same as LP} except with a quadratic objective.
+\end{mydef}
+
+\begin{note}
+	Convex QP has polynomial time solver but non-convex QP is NP-hard.
+\end{note}
+\begin{ex}
+	A non-convex QP: 
+	\begin{subequations}
+		\begin{align}
+		\min_{x} \quad&\frac{1}{2} \Vert Ax \Vert^2, \\
+		s.t. \quad & \Vert x \Vert_2 = 1.
+		\end{align}
+	\end{subequations}
+\end{ex}
+\begin{note}
+	Software package for solving non-convex problem: {\rm IpOPT}, {\rm KNITRO}, or \href{https://neos-guide.org/}{NEOS-Guide} 
+\end{note}
+
+\subsubsection{Solving unconstrained problems}
+There are two ways to solve an unconstrained problem: descent method or trust-region method.
+
+\subsection{Numerical Linear Algebra}
+
+\section{Elastic Materials and Finite Element Simulation}
+
+\section{Something more...}
+
+\section{Papers and books}
+\begin{enumerate}
+	\item Nonlinear Continuum Mechanics for Finite Element Analysis by J. Bonet
+	\item Convex optimization by S. Boyd
+	\item Numerical optimization by Nocedal
+\end{enumerate}
+
+\end{document}
