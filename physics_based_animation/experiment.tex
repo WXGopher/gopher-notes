@@ -103,7 +103,7 @@ Optimization problems can be categorized into constrained or unconstrained probl
 There are two ways to solve an unconstrained problem: descent method or trust-region method.
 
 Descent method refers to pick a descent direction $d$ and do an exact or inexact line search~(LS) to determine descent distance $\alpha d$.
-
+\bigbreak
 \begin{mydef}
 	Descent direction: $\forall \alpha \in (0, \alpha_0)$, $\alpha_0 > 0$, $g(x+\alpha d) < g(x)$.
 \end{mydef}
@@ -130,6 +130,7 @@ x_2^k &= (-\frac{\gamma - 1}{\gamma + 1})^k.
 \end{align}
 \end{subequations}
 If gamma becomes huge, we can tell GD converges slowly (as two GD directions are perpendicular).
+\bigbreak 
 
 Newton's method refers to do a quadratic approximation to problem~\eqref{problem_optim_nonlinear}, given by
 \begin{equation}
@@ -143,6 +144,7 @@ The Newton descent direction is given by
 \begin{equation*}
 p = -(\nabla^2g)^{-1}\nabla g.
 \end{equation*}
+\bigbreak
 \begin{note}
 	Newton's method is affine invariant. Let $x=Ty$ with $T$ being a nonsingular matrix, so problem~\eqref{problem_optim_nonlinear} is equivalent to problem 
 	\begin{equation}
