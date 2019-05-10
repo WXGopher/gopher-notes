@@ -2,18 +2,20 @@
 
 ## Here is what I usually do when I am boring...
 
-
-
 Caution:  these notes by no means are guaranteed to be revised and coherent to the original materials (in fact, you could tell this from my poor writing XD). The way I see it is when I were grilled in an interview, I would go back to this repo and hopefully find out why instead of flipping through thousands of pages of pedantic materials.
 
 Use them at your own risk.
 
 Enjoy :)
 
-
+| Title                            | Comment                                  |
+| -------------------------------- | ---------------------------------------- |
+| [Notes]SICP_in_python.md         | http://composingprograms.com/            |
+| [Notes]The_Linux_Command_Line.md | The linux command line of W. Shotts, Jr. |
+| [Notes]ltxprimer.md              | LaTeX note                               |
+| physics_based_animation          | Ladislav Kavan's     CS6660              |
 
 I also append a list of books/courses that I think worth reading/watching.
-
 
 ## Computer Science
 
@@ -30,9 +32,6 @@ Although this book was written almost 20 years ago, it only covered core OS conc
 > The Mythical Man-Month by Fred Brooks
 
 "Software Engineering 101". 
-
-
-
 
 ### Programming and Toolchains
 
@@ -72,7 +71,7 @@ Including advanced Python programming techniques, clear guide to Pythonic coding
 
 As C++ being such a pain in the ass, this series introduces C++ programming tricks and pitfalls. Also refer to [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines).
 
-> The 	CMake [Tutorial](https://cmake.org/cmake-tutorial/)
+> The     CMake [Tutorial](https://cmake.org/cmake-tutorial/)
 
 A step-by-step guide for using CMake.
 
@@ -108,8 +107,6 @@ Detailed notes and quality lecture videos with a plenty of examples and rigorous
 
 Recommending this book is a sort of cliche; however, I wish to remind you the exercises are not freakishly hard to solve as compared with its frequently mentioned counterpart -- The elements of statistical learning, a book written by J. Friedman, which is I believe written for statisticians not programmers. 
 
-
-
 ---
 
 ## Mathematics
@@ -127,7 +124,6 @@ A comprehensive introduction to mathematical analysis.
 > A First Look at Numerical Functional Analysis by Walter Sawyer
 
 A neat (and thin) book on introduction to mathematical analysis and linear functional analysis.
-
 
 > Princeton Lectures in Analysis I~IV by Elias Stein and Rami Shakarchi
 
