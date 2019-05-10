@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{hyperref}
+\usepackage{todonotes}
 %\hypersetup{
 %	colorlinks=true,
 %	linkcolor=blue,
@@ -14,6 +15,11 @@
 \newtheorem{thm}{Theorem}
 \newtheorem{note}{Note}
 \newtheorem{ex}{Example}
+
+\newcommand{\trans}{\mathrm{T}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 \begin{document}
 
@@ -41,29 +47,29 @@
 
 \begin{subequations}
 	\begin{align}
-	x_{n+1} &= x_n + \frac{h}{2}(v_n + v_{n+1})\\
-	v_{n+1} &= v_n = \frac{h}{2}(f_n + f_{n+1})
+	x_{n+1} &= x_n + \frac{h}{2}(v_n + v_{n+1}),\\
+	v_{n+1} &= v_n = \frac{h}{2}(f_n + f_{n+1}),
 	\end{align}
 \end{subequations}
 where $x$ and $v$ are positions and velocities, and $f_n \equiv f(x_n)$. Thus we have
 \begin{equation}\label{secoptim:nw_eq}
-x_{n+1} - x_n - hv_n = \frac{h^2}{4}(f_n + f_{n+1})
+x_{n+1} - x_n - hv_n = \frac{h^2}{4}(f_n + f_{n+1}).
 \end{equation}
 
 Let $y = x_n + h_nv_n + \frac{h^2}{4}f_n$, $x_{n+1} = x$, note that $\nabla E = -f$, then \eqref{secoptim:nw_eq} becomes
 
 \begin{equation}
-x - y = \frac{h^2}{4}f \Rightarrow x - y + \frac{h^2}{4}f\nabla E = 0
+x - y = \frac{h^2}{4}f \Rightarrow x - y + \frac{h^2}{4}f\nabla E = 0.
 \end{equation}
 
 Let $g(x) = \frac{1}{2}\Vert x-y\vert^2 + \frac{h^2}{4}E$, then solving $g$ equals to solve $x$ for
 \begin{equation}
-\min_{x} \quad g(x)
+\min_{x} \quad g(x).
 \end{equation}
 
 \subsection{Optimization Problems}
 Problem formulation:
-\begin{equation}
+\begin{equation}\label{problem_optim_nonlinear}
 \min_{_x} \quad g(x), \quad x\in \!R^n, \quad g\in \!R.
 \end{equation}
 
@@ -95,6 +101,64 @@ Optimization problems can be categorized into constrained or unconstrained probl
 
 \subsubsection{Solving unconstrained problems}
 There are two ways to solve an unconstrained problem: descent method or trust-region method.
+
+Descent method refers to pick a descent direction $d$ and do an exact or inexact line search~(LS) to determine descent distance $\alpha d$.
+
+\begin{mydef}
+	Descent direction: $\forall \alpha \in (0, \alpha_0)$, $\alpha_0 > 0$, $g(x+\alpha d) < g(x)$.
+\end{mydef}
+\begin{mydef}
+	Exact LS refers to solving the following problem:
+	\begin{equation*}
+	\argmin_{\alpha>0} g(x+\alpha d).
+	\end{equation*}
+\end{mydef}
+\todo[inline]{Backtracking LS}
+
+\subsubsection{Newton's method}
+A usual descent direction is called gradient descent~(GD), denoted by $d=-\nabla g$. It doesn't work well sometime, for example:
+\begin{ex}
+	\begin{equation}
+	\min_{x_1, x_2} g(x1, x2) = \frac{1}{2}(x_1^2 + \gamma x_2^2), \quad \gamma > 0.
+	\end{equation}
+\end{ex}
+If we do exact LS, we get
+\begin{subequations}
+\begin{align}
+x_1^k &= \gamma (\frac{\gamma - 1}{\gamma + 1})^k, \\
+x_2^k &= (-\frac{\gamma - 1}{\gamma + 1})^k.
+\end{align}
+\end{subequations}
+If gamma becomes huge, we can tell GD converges slowly (as two GD directions are perpendicular).
+
+Newton's method refers to do a quadratic approximation to problem~\eqref{problem_optim_nonlinear}, given by
+\begin{equation}
+g(x + p) = g(x) + \nabla g^{\trans}(x)p + \frac{1}{2}p^\trans\nabla^2g(x)p + O(\Vert p\Vert^2) \equiv \tilde{g}(x) + O.
+\end{equation}
+Thus we have
+\begin{equation*}
+\frac{\partial \tilde{g}}{\partial p} = 0 \Longleftrightarrow \nabla g + \nabla^2 gp = 0.
+\end{equation*}
+The Newton descent direction is given by
+\begin{equation*}
+p = -(\nabla^2g)^{-1}\nabla g.
+\end{equation*}
+\begin{note}
+	Newton's method is affine invariant. Let $x=Ty$ with $T$ being a nonsingular matrix, so problem~\eqref{problem_optim_nonlinear} is equivalent to problem 
+	\begin{equation}
+	\min_{y} \tilde{g}(y).
+	\end{equation}
+	We also have 
+	\begin{equation*}
+	\nabla \tilde{g} = T^2 \nabla g, \quad \nabla^2 \tilde{g} = T^
+	\trans \nabla^2 g T.
+	\end{equation*}
+	Newton direction $\Delta y$ of $\tilde{g}$ and $\Delta x$ of $g$ is given by
+	\begin{equation*}
+	\Delta y = -T^{-1}\nabla^2 g \nabla g = T^{-1} \Delta x.
+	\end{equation*}
+\end{note}
+
 
 \subsection{Numerical Linear Algebra}
 
