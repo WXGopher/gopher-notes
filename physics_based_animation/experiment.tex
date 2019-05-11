@@ -80,7 +80,7 @@ Optimization problems can be categorized into constrained or unconstrained probl
 \end{thm}
 
 \begin{mydef}
-	A linear programming (LP) is a problem with linear objective and linear equality or inequality constraints. A quadratic programming (QP) is {\bf the same as LP} except with a quadratic objective.
+	A \textbf{linear programming (LP)} is a problem with linear objective and linear equality or inequality constraints. A \textbf{quadratic programming (QP)} is {\bf the same as LP} except with a quadratic objective.
 \end{mydef}
 
 \begin{note}
@@ -105,10 +105,10 @@ There are two ways to solve an unconstrained problem: descent method or trust-re
 Descent method refers to pick a descent direction $d$ and do an exact or inexact line search~(LS) to determine descent distance $\alpha d$.
 \bigbreak
 \begin{mydef}
-	Descent direction: $\forall \alpha \in (0, \alpha_0)$, $\alpha_0 > 0$, $g(x+\alpha d) < g(x)$.
+	\textbf{Descent direction}: $\forall \alpha \in (0, \alpha_0)$, $\alpha_0 > 0$, $g(x+\alpha d) < g(x)$.
 \end{mydef}
 \begin{mydef}
-	Exact LS refers to solving the following problem:
+	\textbf{Exact LS} refers to solving the following problem:
 	\begin{equation*}
 	\argmin_{\alpha>0} g(x+\alpha d).
 	\end{equation*}
@@ -116,7 +116,7 @@ Descent method refers to pick a descent direction $d$ and do an exact or inexact
 \todo[inline]{Backtracking LS}
 
 \subsubsection{Newton's method}
-A usual descent direction is called gradient descent~(GD), denoted by $d=-\nabla g$. It doesn't work well sometime, for example:
+A usual descent direction is called \textbf{gradient descent}~(GD), denoted by $d=-\nabla g$. It doesn't work well sometime, for example:
 \begin{ex}
 	\begin{equation}
 	\min_{x_1, x_2} g(x1, x2) = \frac{1}{2}(x_1^2 + \gamma x_2^2), \quad \gamma > 0.
@@ -133,17 +133,17 @@ If gamma becomes huge, we can tell GD converges slowly (as two GD directions are
 \bigbreak 
 
 Newton's method refers to do a quadratic approximation to problem~\eqref{problem_optim_nonlinear}, given by
-\begin{equation}
+\begin{equation}\label{newton_approximation}
 g(x + p) = g(x) + \nabla g^{\trans}(x)p + \frac{1}{2}p^\trans\nabla^2g(x)p + O(\Vert p\Vert^2) \equiv \tilde{g}(x) + O.
 \end{equation}
 Thus we have
 \begin{equation*}
 \frac{\partial \tilde{g}}{\partial p} = 0 \Longleftrightarrow \nabla g + \nabla^2 gp = 0.
 \end{equation*}
-The Newton descent direction is given by
-\begin{equation*}
+The \textbf{Newton descent direction} is given by
+\begin{equation}\label{newton_descent_direction}
 p = -(\nabla^2g)^{-1}\nabla g.
-\end{equation*}
+\end{equation}
 \bigbreak
 \begin{note}
 	Newton's method is affine invariant. Let $x=Ty$ with $T$ being a nonsingular matrix, so problem~\eqref{problem_optim_nonlinear} is equivalent to problem 
@@ -161,8 +161,52 @@ p = -(\nabla^2g)^{-1}\nabla g.
 	\end{equation*}
 \end{note}
 
+\begin{mydef}
+	\textbf{Newton decrement}: substitute Newton descent direction~\eqref{newton_descent_direction} into~\eqref{newton_approximation}, we get the \textbf{Newton decrement} 
+	\begin{equation}
+	\lambda^2 = g - \frac{1}{2}\nabla g^\trans(\nabla^2 g)^{-1}\nabla g.
+	\end{equation} 
+	A stopping criteria for Newton's method would be
+	\begin{equation*}
+	\frac{\lambda^2}{2} \leq \epsilon.
+	\end{equation*}
+	Note that Newton decrement is also affine invariant.
+\end{mydef}
+\bigbreak 
+
+Convergence analysis of the Newton's method is given as follows:
+\begin{thm}
+\textbf{Kantorovich}: if $g$ is strictly convex and $\nabla^2 g$ is Lipschitz continuous, then $\exists \epsilon > 0, \eta > 0, \gamma > 0$, s.t.
+\begin{description}
+	\item[Damped phase I] If $\Vert\nabla g \Vert \geq \eta$, then $\Vert g^{k+1} \Vert \leq \Vert g^{k} \Vert - \gamma$;
+	\item[Quadratic phase II] If $\Vert\nabla g \Vert < \eta$, then $\Vert g^{k+1} \Vert \leq c \Vert g^{k}\Vert^2$.
+\end{description}
+\end{thm}
+Some cases where Newton's method doesn't work well:
+\begin{enumerate}
+	\item If $g$ is highly nonlinear, the damped phase will be long;
+	\item If $g$ is non-convex, solution might not converge to a minimum.
+\end{enumerate}
+In practical implementations, the Hessian might not always be positive definite. A possible Hessian modification is:
+\begin{note}
+	\textbf{Hessian modification}: Consider $A = \nabla^2 g + cI$, where $c>0$. It is shown that if $\nabla^2 g = Q\Lambda Q^\trans$ ($\nabla^2 g$ is symmetric, hence it is always diagonalizable), then $A=Q(\Lambda + cI)Q^\trans$, hence $A$ is positive definite given sufficiently large $c>0$. 
+\end{note}
+
+Solving Newton's direction~\eqref{newton_descent_direction} refers to solving a linear system. We introduce several techniques to tackle this.
 
 \subsection{Numerical Linear Algebra}
+We consider solving a linear system $Ax = b$.
+\subsubsection{Direct solvers}
+We can prefactor $A$ into $A = UV^\trans$, with $U$ and $V$ being low rank matrices.
+
+Common factorization methods are
+\begin{description}
+	\item[LU]
+	\item[Sparse LU]
+	\item[Cholesky]
+\end{description}
+ 
+\subsubsection{Iterative solvers}
 
 \section{Elastic Materials and Finite Element Simulation}
 
