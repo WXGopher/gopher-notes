@@ -229,9 +229,8 @@ r_k \equiv A(x^\star - x_k) = b - Ax_k \quad \Leftrightarrow \quad r_{k+1} = (I-
 To make classical method converge, we need $\rho(I - P^{-1}A) < 1$, where $\rho(\cdot)$ is the spectrum radius.
 
 \paragraph{Krylov subpace method}
-\begin{note}
-	A good reference on CG: \texttt{An Introduction to the Conjugate Gradient Method 	Without the Agonizing Pain} by J. Shewchuk.
-\end{note}
+A good reference on CG is~\cite{shewchuk1994introduction}.
+
 Assuming $A^\trans = A$ and $A \succeq 0$.
 
 \section{Elastic Materials and Finite Element Simulation}
@@ -239,10 +238,14 @@ Assuming $A^\trans = A$ and $A \succeq 0$.
 \section{Something more...}
 
 \section{Papers and books}
-\begin{enumerate}
-	\item Nonlinear Continuum Mechanics for Finite Element Analysis by J. Bonet
-	\item Convex optimization by S. Boyd
-	\item Numerical optimization by Nocedal
-\end{enumerate}
+
+Numerical optimization can refer to~\cite{boyd2004convex}~\cite{nocedal2006numerical}.
+
+\cite{bonet1997nonlinear} is a great reference for continuum mechanics and FEM.
+
+
+
+\bibliographystyle{plain}
+\bibliography{bib.bib} 
 
 \end{document}
