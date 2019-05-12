@@ -201,12 +201,38 @@ We can prefactor $A$ into $A = UV^\trans$, with $U$ and $V$ being low rank matri
 
 Common factorization methods are
 \begin{description}
-	\item[LU]
-	\item[Sparse LU]
-	\item[Cholesky]
+	\item[LU] If $A$ is nonsingular, then there exist $L,P,U$, where they are lower-triangular matrix, permutation matrix (hence orthogonal), and upper-triangular matrix, respectively, s.t. $A=PLU$.
+	\item[Sparse LU] $A=P_1LUP_2$, where $P_1$ and $P_2$ are permutations to utilize sparse information of $A$.
+	\item[Cholesky] For symmetric positive-definite matrix, we have $A = LL^\trans$ with unique $L$. Note that for positive semi-definite matrix, Cholesky is not unique.
 \end{description}
+ \todo[inline]{LDLT}
  
 \subsubsection{Iterative solvers}
+Iterative solvers includes:
+\begin{enumerate}
+	\item Classical method: Jacobian, Gauss-Seidel, SOR~(super over-relaxation), etc.;
+	\item Krylov subspace method: CG~(conjugate gradient), GMRES~(generalized minimal residual), etc.;
+	\item multigrid method.
+\end{enumerate}
+
+\paragraph{Classical method}
+Suppose $P$ is easy to invert, let $A = P+A-P$, then
+\begin{equation*}
+Ax=b \quad \Leftrightarrow \quad Px = (P-A)x + b.
+\end{equation*} 
+$P = diag(A)$ gives us Jacobian method, and it's GPU-friendly; $P = lower(A)$ gives us GS method; $P = diag(A) + w\cdot lower(A)$ gives us SOR method where $w<2$.
+
+The residual term follows
+\begin{equation*}
+r_k \equiv A(x^\star - x_k) = b - Ax_k \quad \Leftrightarrow \quad r_{k+1} = (I-P^{-1}A)r_k.
+\end{equation*}
+To make classical method converge, we need $\rho(I - P^{-1}A) < 1$, where $\rho(\cdot)$ is the spectrum radius.
+
+\paragraph{Krylov subpace method}
+\begin{note}
+	A good reference on CG: \texttt{An Introduction to the Conjugate Gradient Method 	Without the Agonizing Pain} by J. Shewchuk.
+\end{note}
+Assuming $A^\trans = A$ and $A \succeq 0$.
 
 \section{Elastic Materials and Finite Element Simulation}
 
