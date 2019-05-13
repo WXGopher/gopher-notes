@@ -23,7 +23,7 @@
 
 \begin{document}
 
-\title{Physics-based Animation: A Mathematical aPerspective}
+\title{Physics-based Animation: A Mathematical Perspective}
 \author{Based on Ladislav Kavan's CS6660 with annotations from wxgopher}
 
 \maketitle
@@ -211,7 +211,7 @@ Common factorization methods are
 Iterative solvers includes:
 \begin{enumerate}
 	\item Classical method: Jacobian, Gauss-Seidel, SOR~(super over-relaxation), etc.;
-	\item Krylov subspace method: CG~(conjugate gradient), GMRES~(generalized minimal residual), etc.;
+	\item Krylov subspace method: CG~(conjugate gradient)\footnote{A good reference on CG is~\cite{shewchuk1994introduction}.}, GMRES~(generalized minimal residual), etc.;
 	\item multigrid method.
 \end{enumerate}
 
@@ -229,9 +229,38 @@ r_k \equiv A(x^\star - x_k) = b - Ax_k \quad \Leftrightarrow \quad r_{k+1} = (I-
 To make classical method converge, we need $\rho(I - P^{-1}A) < 1$, where $\rho(\cdot)$ is the spectrum radius.
 
 \paragraph{Krylov subpace method}
-A good reference on CG is~\cite{shewchuk1994introduction}.
 
-Assuming $A^\trans = A$ and $A \succeq 0$.
+
+Assuming $A^\trans = A$ and $A \succeq 0$, then
+\begin{equation}\label{cg_form}
+\argmin_{x} g(x) = \frac{1}{2} x^\trans Ax - x^\trans b \quad \Leftrightarrow \quad solve\,\, Ax=b.
+\end{equation}
+Let $\nabla g_k = Ax_k - b = -r_k$\footnote{$Ax$ is computed on-fly, we don't need the whole $A$.} as a descent direction, the line search for~\eqref{cg_form} is as follows:
+\begin{enumerate}
+	\item Solve $\alpha$ from $\argmin_{\alpha} (\frac{1}{2} (x + \alpha r)^\trans A (x + \alpha r) - (x + \alpha r)^\trans b \equiv \frac{1}{2} \Vert x + \alpha r \Vert^2_{A} - (x+\alpha r)^\trans b)$ by letting $\frac{\partial E}{\partial \alpha} = 0$, where $E$ is the objective;
+	\item $\alpha$ follows $\alpha = -\frac{\Vert r \Vert^2}{\vert r \Vert^2_A}$;
+	\item $x_{k+1} = x_k + \alpha_k r_k$.
+\end{enumerate}
+This is the gist of CG from gradient descent.
+
+\subparagraph{CG}
+Assuming solving problem~\eqref{cg_form}.
+\begin{mydef}
+	\textbf{A-conjugate} A set of vectors $\{p_i\}$ are A-conjugate iff $\forall  i, j, i\neq j, p_i^\trans Ap_j = 0$.
+\end{mydef}
+The CG algorithm is as follows:
+\begin{enumerate}
+	\item We define $r_k = Ax_k - b$;
+	\item Let $p_1 = r_1$\footnote{$r_1$ is usually chosen as a GD step};
+	\item $p_k = r_k + \beta_k p_{k-1}, \beta_k = \frac{r_k^\trans Ap_{k-1}}{p_{k-1}^\trans Ap_{k-1}}$;
+	\item Do LS along direction $p_k$, we have $\alpha_k = \frac{r_k^\trans p_k}{p^\trans A p_k}$;
+	\item $x_{k+1} = x_k + \alpha_k p_k$.
+\end{enumerate}
+
+\subparagraph{Preconditioning CG}
+If $A$ is ill-conditioned, we consider adding preconditioner $M$ to $A$, s.t. $cond(MA) < cond(A)$.
+
+The Jacobian preconditioner is given by $M = diag(A)^{-1}$. The incomplete Cholesky is given by prefactoring $A$ into $L_a L_a^\trans$ where $L_a$ is an approximation of $L$ of the Cholesky decomposition of $A$ given by $A=LL^\trans$.
 
 \section{Elastic Materials and Finite Element Simulation}
 
