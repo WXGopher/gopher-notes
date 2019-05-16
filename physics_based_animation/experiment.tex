@@ -17,6 +17,7 @@
 \newtheorem{ex}{Example}
 
 \newcommand{\trans}{\mathrm{T}}
+\newcommand{\diffd}{\mathrm{d}}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -260,10 +261,23 @@ The CG algorithm is as follows:
 \subparagraph{Preconditioning CG}
 If $A$ is ill-conditioned, we consider adding preconditioner $M$ to $A$, s.t. $cond(MA) < cond(A)$.
 
-The Jacobian preconditioner is given by $M = diag(A)^{-1}$. The incomplete Cholesky is given by prefactoring $A$ into $L_a L_a^\trans$ where $L_a$ is an approximation of $L$ of the Cholesky decomposition of $A$ given by $A=LL^\trans$.
+The Jacobian preconditioner is given by $M = diag(A)^{-1}$. The incomplete Cholesky is given by prefactoring $A$ into $L_a L_a^\trans$ where -$L_a$ is an approximation of $L$ of the Cholesky decomposition of $A$ given by $A=LL^\trans$.
 
 \section{Elastic Materials and Finite Element Simulation}
-
+Consider kinetic energy 
+\begin{equation*}
+k = \frac{1}{2} v^\trans Mv.
+\end{equation*}
+Assuming unit mass, we have
+\begin{equation}
+k = \frac{1}{2} \int_\Omega \rho(p) \Vert v(p) \Vert^2 \diffd p,
+\end{equation}
+where $p \in \Omega$ is the material point. We discretize $\Omega$, and for every node $p_i$, we define piece-wise shape function $s_i : \Omega \mapsto [0, 1]$, s.t. $\sum_i s_i = 1$. We have 
+\[r_t(p) = \begin{cases}
+1 & p\in E_t\\
+0 & otherwise
+\end{cases} 
+\]
 \section{Fluids and Partial Differential Equations}
 
 \section{Something more...}
