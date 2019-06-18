@@ -272,12 +272,62 @@ Assuming unit mass, we have
 \begin{equation}
 k = \frac{1}{2} \int_\Omega \rho(p) \Vert v(p) \Vert^2 \diffd p,
 \end{equation}
-where $p \in \Omega$ is the material point. We discretize $\Omega$, and for every node $p_i$, we define piece-wise shape function $s_i : \Omega \mapsto [0, 1]$, s.t. $\sum_i s_i = 1$. We have 
+where $p \in \Omega$ is the material point. We discretize $\Omega$, and for every node $p_i$ we define piece-wise shape function $s_i : \Omega \mapsto [0, 1]$, s.t. $\sum_i s_i = 1$. For every region $E_t$, we also define
 \[r_t(p) = \begin{cases}
-1 & p\in E_t\\
-0 & otherwise
+1 & p\in E_t,\\
+0 & otherwise.
 \end{cases} 
 \]
+
+We have
+\begin{subequations}
+\begin{align}
+v(p) &=\sum_i v_i s_i(p), \\
+\rho(p) &= \sum_t \rho_t r_t(p).
+\end{align}
+\end{subequations}
+The kinetic energy follows
+\begin{subequations}
+	\begin{align}
+	k &= \frac{1}{2} \int_\Omega \sum_t \rho_t r_t \Vert v(p)\Vert^2 \diffd p\\
+	  &= \frac{1}{2} \sum_t \rho_t \int_\Omega r_t(p) \Vert v(p) \Vert^2 \diffd p\\
+	  &= \frac{1}{2} \sum_t \rho_t \int_{E_t} \Vert v \Vert^2 \diffd p \\
+	  &= \frac{1}{2} \sum_t \rho_t \sum_{i,j} v_i^\trans v_j \int_{E_t} s_i s_j \diffd p.\\
+	\end{align}
+\end{subequations}
+We define
+\begin{equation}
+\int_{E_t} s_i s_j \diffd p = s_{i, j}^t,
+\end{equation}
+for different methods of discretization, we have
+\begin{description}
+	\item[Triangal element~(2-dimension)] \[s^t_{i,j} = \begin{cases}
+	\frac{Area(t)}{6} & i = j, \\
+	\frac{Area(t)}{12} & i \neq j.
+	\end{cases}\]
+	\item[Tetrahderal element~(3-dimension)] \[s^t_{i,j} = \begin{cases}
+	\frac{Area(t)}{10} & i = j, \\
+	\frac{Area(t)}{20} & i \neq j.
+	\end{cases}\]
+\end{description}
+
+Let's consider practical implementation of FEM. From discussions above, we have
+\begin{subequations}
+	\begin{align}
+	\int_{E_t} \Vert v(p) \Vert^2 \diffd p &= \sum_{i, j}v_i^\trans v_j \int_{E_t} s_i s_j \diffd p\\
+	&= \sum_{i, j}v_i^\trans v_j  s^t_{i,j} \\ 
+	&= V^\trans S_t V,
+	\end{align}
+\end{subequations}
+where $V = (v_1, v_2, \cdots, v_n)^\trans$, and
+\begin{equation*}
+S_t = \begin{pmatrix}
+s_{1,1}^t \cdot I_3  & \cdots & s^t_{1,n} \cdot I_3 \\
+\vdots & \ddots & \vdots \\
+s_{n, 1}^t \cdot I_3 & \cdots & s^t_{n,n} \cdot I_3 \\
+\end{pmatrix}.
+\end{equation*}
+
 \section{Fluids and Partial Differential Equations}
 
 \section{Something more...}
@@ -288,7 +338,9 @@ Numerical optimization can refer to~\cite{boyd2004convex}~\cite{nocedal2006numer
 
 \cite{bonet1997nonlinear} is a great reference for continuum mechanics and FEM.
 
+An awesome book on fluids simulation is~\cite{bridson2015fluid}.
 
+Vector calculus can be found in~\cite{petersen2008matrix}.
 
 \bibliographystyle{plain}
 \bibliography{bib.bib} 
