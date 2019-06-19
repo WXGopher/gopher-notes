@@ -18,6 +18,7 @@
 
 \newcommand{\trans}{\mathrm{T}}
 \newcommand{\diffd}{\mathrm{d}}
+\newcommand{\realR}{\rm I\!R}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -264,6 +265,7 @@ If $A$ is ill-conditioned, we consider adding preconditioner $M$ to $A$, s.t. $c
 The Jacobian preconditioner is given by $M = diag(A)^{-1}$. The incomplete Cholesky is given by prefactoring $A$ into $L_a L_a^\trans$ where -$L_a$ is an approximation of $L$ of the Cholesky decomposition of $A$ given by $A=LL^\trans$.
 
 \section{Elastic Materials and Finite Element Simulation}
+\subsection{Kinetic energy}
 Consider kinetic energy 
 \begin{equation*}
 k = \frac{1}{2} v^\trans Mv.
@@ -327,7 +329,45 @@ s_{1,1}^t \cdot I_3  & \cdots & s^t_{1,n} \cdot I_3 \\
 s_{n, 1}^t \cdot I_3 & \cdots & s^t_{n,n} \cdot I_3 \\
 \end{pmatrix}.
 \end{equation*}
+The kinetic energy follows
+\begin{subequations}
+	\begin{align}
+	k &= \frac{1}{2} \sum_t \rho_t (V^\trans S_t V) \\
+	  &= \frac{1}{2} V^\trans (\sum_t \rho_t S_t)V
+	\end{align}
+\end{subequations}
+We denote \textit{mass matrix} $M_t$ with $M_t = \sum_t \rho_t S_t$. For triangle element we have
+\begin{equation}
+M_t = \sum_t \rho_t S_t = \rho_t Area(t) P \otimes I_3,
+\end{equation}
+where $P$ is defined by 
+\[P_{m,n} = \begin{cases}
+\frac{1}{6} & m = n \in {i,j,k} \\
+\frac{1}{12} & m \neq n \in {i,j,k} \\
+0 & otherwise
+\end{cases},
+\] where $i, j$ and $k$ are triangle vertex indices\footnote{In practical implementation, sometimes the \textit{mass lumping} technique is used. This technique aggregates matrix element to its diagonal and to facilitate computations.}.
 
+\subsection{Elastic energy}
+In this section we only consider hyperelastic materials.
+
+\todo[inline]{Pic here}
+Consider a deformation $f$ from $n$-points $d$-dimensional material~(rest pose)~space $\Omega$ to world~(deformed)~space $f(\Omega) \in \realR^{nd \times nd}$, for every spatial point $p$, the deformation gradient is $\nabla f(p)$.
+Elastic energy can be represented by
+\begin{equation}
+E = \int_{\Omega} \psi(\nabla f(p)) \nabla f(p) \diffd p,
+\end{equation}
+where $\psi \in \realR^{n \times n} \mapsto \realR^+$ is the~\textit{energy density function}.
+
+The energy density function can be further decomposed into
+\begin{equation}
+\psi = \psi_{material} \circ \psi_{strain},
+\end{equation}
+where $\psi_{material}$ describes material property and $\psi_{strain}$ describes geometric measure of distortion of this material.
+
+Let's consider how to use FEM to discretize the elastic energy.
+
+We consider 3-dimensional problem, where $\psi \in \realR^{3\times 3} \mapsto \realR^+$ is given.
 \section{Fluids and Partial Differential Equations}
 
 \section{Something more...}
@@ -336,7 +376,7 @@ s_{n, 1}^t \cdot I_3 & \cdots & s^t_{n,n} \cdot I_3 \\
 
 Numerical optimization can refer to~\cite{boyd2004convex}~\cite{nocedal2006numerical}.
 
-\cite{bonet1997nonlinear} is a great reference for continuum mechanics and FEM.
+\cite{bonet1997nonlinear} and~\cite{sifakis2012fem} are great references for continuum mechanics and FEM.
 
 An awesome book on fluids simulation is~\cite{bridson2015fluid}.
 
