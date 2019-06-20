@@ -354,7 +354,7 @@ In this section we only consider hyperelastic materials.
 \todo[inline]{Pic here}
 Consider a deformation $f$ from $n$-points $d$-dimensional material~(rest pose)~space $\Omega$ to world~(deformed)~space $f(\Omega) \in \realR^{nd \times nd}$, for every spatial point $p$, the deformation gradient is $\nabla f(p)$.
 Elastic energy can be represented by
-\begin{equation}
+\begin{equation}\label{sec_FEM_elastic_potential}
 E = \int_{\Omega} \psi(\nabla f(p)) \nabla f(p) \diffd p,
 \end{equation}
 where $\psi \in \realR^{n \times n} \mapsto \realR^+$ is the~\textit{energy density function}.
@@ -367,7 +367,47 @@ where $\psi_{material}$ describes material property and $\psi_{strain}$ describe
 
 Let's consider how to use FEM to discretize the elastic energy.
 
-We consider 3-dimensional problem, where $\psi \in \realR^{3\times 3} \mapsto \realR^+$ is given.
+\todo[inline]{elaborate on this}
+We consider 3-dimensional problem, where $\psi \in \realR^{3\times 3} \mapsto \realR^+$ is given. For every tetrahedron~(tet), we define $F = \nabla f \in \realR^{3 \times 3}$. For every deformed vertex $\mathbf{x}$ and material vertex $\tilde{\mathbf{x}}$\footnote{$\mathbf{x} = (x, y, z)$}, we have $\mathbf{x} = f(\tilde{\mathbf{x}}) = F\tilde{\mathbf{x}} + b$, where $\mathbf{b}$ is a constant. For the whole tet, we have
+\begin{equation}
+\mathbf{x}_i - \mathbf{x}_4 = F(\tilde{\mathbf{x}}_i - \tilde{\mathbf{x}}_4),
+\end{equation}
+where $i \in {1,2,3,4}$ are vertex indices. This can be written as
+\begin{equation}
+D_s = F D_m,
+\end{equation}
+where 
+\begin{equation}
+D_s = \begin{pmatrix}
+x_1 - x_4 & x_2 - x_4 & x_3 - x_4 \\
+y_1 - y_4 & y_2 - y_4 & y_3 - y_4 \\
+z_1 - z_4 & z_2 - z_4 & z_3 - z_4 \\
+\end{pmatrix}, \quad
+D_m= \begin{pmatrix}
+\tilde{x}_1 - \tilde{x}_4 & \tilde{x}_2 - \tilde{x}_4 & \tilde{x}_3 - \tilde{x}_4 \\
+\tilde{y}_1 - \tilde{y}_4 & \tilde{y}_2 - \tilde{y}_4 & \tilde{y}_3 - \tilde{y}_4 \\
+\tilde{z}_1 - \tilde{z}_4 & \tilde{z}_2 - \tilde{z}_4 & \tilde{z}_3 - \tilde{z}_4 \\
+\end{pmatrix},
+\end{equation}
+thus
+\begin{equation}
+F = D_s(x)D_m^{-1}.
+\end{equation}
+The elastic energy~\eqref{sec_FEM_elastic_potential} can be discretized with
+\begin{subequations}
+\begin{align}
+E &= \sum_t \int_{E_t} \psi_t(F_t) \diffd t\\
+  &= \sum_t w_t\psi_t(F_t),
+\end{align}
+\end{subequations}
+where
+\begin{equation}
+w_t = \frac{1}{6} det\Vert D_m\Vert,
+\end{equation}
+is the volume of the tet $t$.
+
+\subsection{Material property $\psi$}
+
 \section{Fluids and Partial Differential Equations}
 
 \section{Something more...}
