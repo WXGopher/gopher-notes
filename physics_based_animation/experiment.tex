@@ -406,6 +406,62 @@ w_t = \frac{1}{6} det\Vert D_m\Vert,
 \end{equation}
 is the volume of the tet $t$.
 
+\subsection{Vectorization}
+Before we get to the actual material property, we would introduce a vectorization scheme frequently seen in practical implementations.
+
+Recall that $\nabla f \equiv F$ is linear w.r.t. $x$, where $x$ is a collection of material space points, we have $F = G x$, where $F \in \realR^{3 \times 3}$, $x \in \realR^{3n \times 1}$, and $G$ is a tensor.
+
+\begin{mydef}
+	Let $A \in \realR^{m \times n}$, $B \in \realR^{k \times l}$, we denote the \textbf{Kronecker product} $A \otimes B$ (which is  an $mk \times nl$ matrix) with \begin{equation}
+	A \otimes B = \begin{pmatrix}
+	a_{11}B & \cdots & a_{1n}B \\
+	\vdots & \ddots & \vdots \\
+	a_{m1}B & \cdots & a_{mn}B\\
+	\end{pmatrix}.
+	\end{equation}
+\end{mydef}
+\begin{mydef}
+	We denote a \textbf{vectorization} of a matrix $A$ with
+	\begin{equation}
+	vec(A) = (a_1, a_2, \cdots, a_n)^\trans.
+	\end{equation}
+\end{mydef}
+
+We further derives some lemmas:
+\begin{lemma}
+	For any given matrices $A, B, C$ and $D$, assuming the matrix dimensions agree, we have 
+	\begin{enumerate}
+		\item $(A \otimes B) \cdot (C \otimes D) = A \cdot C \otimes B \cdot D$;
+		\item $(A \otimes B)^\trans  = A^\trans \otimes B^\trans$;
+		\item $vec(AX) = (I_p \otimes A) \cdot vec(X) = (X^\trans \otimes I_m) \cdot vec(A)$, where $A \in \realR^{m \times n}, x \in \realR^{n \times p}$.
+	\end{enumerate}
+\end{lemma}
+Then for each tet, $vec(F) \in \realR^{9 \times 1}$, $G \in \realR^{9 \times 3n}$, $x \in \realR^{3n \times 1}$, and
+\begin{equation}
+	vec(F)  = vec(D_s \cdot D_m^{-1}) = (D_m^{-\trans} \otimes I_3) \cdot vec(D_s),
+\end{equation}
+where\footnote{$x_i \in \realR^{3 \times 1}$. }
+\begin{equation}
+vec(D_s) = \begin{pmatrix}
+x_1 - x_4 \\
+x_2 - x_4 \\
+x_3 - x_4
+\end{pmatrix}  = (S \cdot I_3) \cdot x \in \realR^{9 \times 1}, 
+\end{equation}
+where we define a selector matrix $S$ on each tet. $S$ is defined by
+\begin{equation}
+	S = \begin{pmatrix}
+	\cdots & 1 & \cdots & -1  & \cdots \\
+	1 & \cdots  & \cdots  & -1 & \cdots \\
+	  \cdots  &  \cdots & 1 & -1 & \cdots \\
+	\end{pmatrix},
+\end{equation}
+where the column indices of $1$s are from $x_1$, $x_2$, and $x_3$; the column index of $-1$ is from $x_4$.
+
+To sum up, for each tet:
+\begin{equation}
+vec(F) = (D_m^{-\trans} \otimes I_3) ( S \otimes I_3) x = (D_m^{-\trans} \cdot S \otimes I_3) x.
+\end{equation}
 \subsection{Material property $\psi$}
 
 \section{Fluids and Partial Differential Equations}
