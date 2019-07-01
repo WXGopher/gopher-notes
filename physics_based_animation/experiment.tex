@@ -462,7 +462,40 @@ To sum up, for each tet:
 \begin{equation}
 vec(F) = (D_m^{-\trans} \otimes I_3) ( S \otimes I_3) x = (D_m^{-\trans} \cdot S \otimes I_3) x.
 \end{equation}
+
 \subsection{Material property $\psi$}
+The deformation energy function $\psi$ is a mapping from the deformation gradient to a positive real number: $\realR^{3\times 3} \mapsto \realR^+$ (or in a vectorized form $\realR^{9 \times 1} \mapsto \realR^+$).
+
+\subsubsection{Linear elasticity}\label{sec:psi_linear}
+\begin{equation}
+\psi (F) = \Vert F - I \Vert^2_F,
+\end{equation}
+where $\Vert \cdot \Vert_F$ denotes the Frobenius norm. Linear elasticity is not rotation invariant, i.e.,
+\begin{equation}
+\psi(RF) \neq \psi(F),
+\end{equation}
+where $R \in SO(3)$.
+
+\subsubsection{Saint Venant–Kirchhoff (StVK)}\label{sec:psi_stvk}
+To make $\psi$ rotation invariant, we consider
+\begin{equation}
+\psi = \Vert F^\trans F - I \Vert^2_F,
+\end{equation}
+where $\psi_{strain} = F^\trans F - I$ is called the \textit{Green tensor}, and $\psi_{material} = \Vert \cdot \Vert^2_F$.
+
+However, the StVK model has the reflection problem. For example, consider $F_1 = \begin{pmatrix}
+1 & & \\
+ & 1 & \\
+ & & 1 \\
+\end{pmatrix}$ and $F_2 = \begin{pmatrix}
+1 & & \\
+& 1 & \\
+& & -1\\
+\end{pmatrix}$,
+ it's easy to derive $\psi(F_1) = \psi(F_2)$.
+ 
+\subsubsection{Corotated linear elasticity}\label{sec:psi_corot}
+To solve the reflection problem mentioned in~\ref{sec:psi_stvk} 	
 
 \section{Fluids and Partial Differential Equations}
 
