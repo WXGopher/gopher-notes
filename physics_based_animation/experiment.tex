@@ -423,7 +423,7 @@ Recall that $\nabla f \equiv F$ is linear w.r.t. $x$, where $x$ is a collection 
 \begin{mydef}
 	We denote a \textbf{vectorization} of a matrix $A$ with
 	\begin{equation}
-	vec(A) = (a_1, a_2, \cdots, a_n)^\trans.
+	\mathrm{vec}(A) = (a_1, a_2, \cdots, a_n)^\trans.
 	\end{equation}
 \end{mydef}
 
@@ -433,16 +433,16 @@ We further derives some lemmas:
 	\begin{enumerate}
 		\item $(A \otimes B) \cdot (C \otimes D) = A \cdot C \otimes B \cdot D$;
 		\item $(A \otimes B)^\trans  = A^\trans \otimes B^\trans$;
-		\item $vec(AX) = (I_p \otimes A) \cdot vec(X) = (X^\trans \otimes I_m) \cdot vec(A)$, where $A \in \realR^{m \times n}, x \in \realR^{n \times p}$.
+		\item $\mathrm{vec}(AX) = (I_p \otimes A) \cdot \mathrm{vec}(X) = (X^\trans \otimes I_m) \cdot \mathrm{vec}(A)$, where $A \in \realR^{m \times n}, x \in \realR^{n \times p}$.
 	\end{enumerate}
 \end{lemma}
-Then for each tet, $vec(F) \in \realR^{9 \times 1}$, $G \in \realR^{9 \times 3n}$, $x \in \realR^{3n \times 1}$, and
+Then for each tet, $\mathrm{vec}(F) \in \realR^{9 \times 1}$, $G \in \realR^{9 \times 3n}$, $x \in \realR^{3n \times 1}$, and
 \begin{equation}
-	vec(F)  = vec(D_s \cdot D_m^{-1}) = (D_m^{-\trans} \otimes I_3) \cdot vec(D_s),
+	\mathrm{vec}(F)  = \mathrm{vec}(D_s \cdot D_m^{-1}) = (D_m^{-\trans} \otimes I_3) \cdot \mathrm{vec}(D_s),
 \end{equation}
 where\footnote{$x_i \in \realR^{3 \times 1}$. }
 \begin{equation}
-vec(D_s) = \begin{pmatrix}
+\mathrm{vec}(D_s) = \begin{pmatrix}
 x_1 - x_4 \\
 x_2 - x_4 \\
 x_3 - x_4
@@ -460,7 +460,7 @@ where the column indices of $1$s are from $x_1$, $x_2$, and $x_3$; the column in
 
 To sum up, for each tet:
 \begin{equation}
-vec(F) = (D_m^{-\trans} \otimes I_3) ( S \otimes I_3) x = (D_m^{-\trans} \cdot S \otimes I_3) x.
+\mathrm{vec}(F) = (D_m^{-\trans} \otimes I_3) ( S \otimes I_3) x = (D_m^{-\trans} \cdot S \otimes I_3) x.
 \end{equation}
 
 \subsection{Material property $\psi$}
@@ -495,7 +495,48 @@ However, the StVK model has the reflection problem. For example, consider $F_1 =
  it's easy to derive $\psi(F_1) = \psi(F_2)$.
  
 \subsubsection{Corotated linear elasticity}\label{sec:psi_corot}
-To solve the reflection problem mentioned in~\ref{sec:psi_stvk} 	
+Consider SVD decomposition $F = U \Sigma V^\trans$, where $U, V \in SO(3)$, $\Sigma = \begin{pmatrix}
+\sigma_1 & & \\
+& \sigma_2 & \\
+& & \sigma_3 \\
+\end{pmatrix}$, $\sigma_1 \geq \sigma_2 \geq \sigma_3$.
+The corotated linear elasticity is defined by
+\begin{subequations}
+	\begin{align}
+	\psi(F) &= \Vert \Sigma - I \Vert^2_F \\
+	        &= \sum^3_{i=1}(\sigma_i - 1)^2 \\
+	        &= \Vert U\Sigma V^\trans - UV^\trans \vert^2_F \\
+	        &= \Vert F - R \Vert^2_F
+	\end{align}
+\end{subequations},
+\todo[inline]{why?}
+where $R = \argmin_{x \in SO(3)} \Vert F - x \Vert^\trans_F$.
+
+\subsubsection{Volume preservation term}\label{sec:psi_vol}
+Corotated linear elasticity does not preserve volume, for example, given $F_1 = \begin{pmatrix}
+1.5 & \\ 
+ & 1.5 \\
+\end{pmatrix}$ and $F_2 = \begin{pmatrix}
+1.5 & \\
+ & 0.5 \\
+\end{pmatrix}$, it's easy to derive $\psi_{corot}(F_1) = \psi_{corot}(F_2)$.
+
+We consider adding a volume preservation term
+\begin{subequations}
+\begin{align}
+\psi_{vol}(F) &= (\mathrm{det}(F) - 1)^^2 \\
+              &= (\prod \sigma_i - 1)^2	 \\
+              &\approx (\sum \sigma_i - 3)^2 \\
+              &=[\mathrm{tr}(\Sigma - I)]^2
+\end{align}
+\end{subequations}.
+
+\subsubsection{General corotated linear elasticity}
+Combining~\ref{sec:psi_corot} and~\ref{sec:psi_vol} together, we have
+\begin{equation}
+\psi = \mu \Vert \Sigma - I\Vert^2_F + \frac{\lambda}{2} \mathrm{tr}^2(\Sigma - I),
+\end{equation}
+where $\mu$ and $\lambda$ are Lamé coefficients.
 
 \section{Fluids and Partial Differential Equations}
 
