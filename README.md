@@ -17,9 +17,15 @@ Enjoy :)
 
 I also append a list of books/courses that I think worth reading/watching.
 
-## Computer Science
+Update: This document also collects awesome library/toolkits I've found useful.
 
-### Computer Science Fundamentals
+
+
+## Books/Documents
+
+### Computer Science
+
+#### Computer Science Fundamentals
 
 > Structure and Implementation of Computer Programs by Erald Jay Sussman and Hal Abelson
 
@@ -33,7 +39,7 @@ Although this book was written almost 20 years ago, it only covered core OS conc
 
 "Software Engineering 101". 
 
-### Programming and Toolchains
+#### Programming and Toolchains
 
 > The Linux Command Line by William E. Shotts, Jr.
 
@@ -71,11 +77,11 @@ Including advanced Python programming techniques, clear guide to Pythonic coding
 
 As C++ being such a pain in the ass, this series introduces C++ programming tricks and pitfalls. Also refer to [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines).
 
-> The     CMake [Tutorial](https://cmake.org/cmake-tutorial/)
+> The CMake [Tutorial](https://cmake.org/cmake-tutorial/)
 
 A step-by-step guide for using CMake.
 
-### Computer Graphics and Computer Vision
+#### Computer Graphics and Computer Vision
 
 > Fluid Simulation for Computer Graphics by Robert Bridson
 
@@ -97,7 +103,7 @@ Deformable object, elastic material simulation.
 
 "Physics modelling 101" (mass-spring systems, particle-based systems, deformable object simulations and all you need to know)
 
-### Artificial Intelligence and Machine Learning
+#### Artificial Intelligence and Machine Learning
 
 > Reinforcement Learning by David Silver
 
@@ -107,11 +113,10 @@ Detailed notes and quality lecture videos with a plenty of examples and rigorous
 
 Recommending this book is a sort of cliche; however, I wish to remind you the exercises are not freakishly hard to solve as compared with its frequently mentioned counterpart -- The elements of statistical learning, a book written by J. Friedman, which is I believe written for statisticians not programmers. 
 
----
 
-## Mathematics
+### Mathematics
 
-### Pure Mathematics
+#### Pure Mathematics
 
 > Linear Algebra and Its Applications by Peter Lax
 
@@ -133,7 +138,7 @@ Rank up to graduate level analysis through completing this book series :)
 
 An informal presentation on the Differential Dynamical Systems. You can also find a looooot of anecdotes of those lovely mathemagitians.
 
-### Applied Mathematics
+#### Applied Mathematics
 
 > Numerical Solution of Time-Dependent Advection-Diffusion-Reaction Equations by Jan Verwer and Williem Hundsdorfer
 
@@ -151,7 +156,7 @@ A classical reference on numerical eigenvalue problems with plentiful examples.
 
 This book is derived from (an excellent course) [EE364](http://ee364a.stanford.edu) from Stanford.
 
----
+
 
 ## Lecture Notes/Courses
 
@@ -166,3 +171,15 @@ Physics simulation 101.
 > Physics based animation by Ladislav Kavan
 
 Quite a contingent material if you are doing this.
+
+> [Computer Vision IT412](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT10/lect10.html)
+
+Awesome material on camera models.
+
+
+
+
+## Toolchains/Library
+
+Jupyter [Lab]([https://jupyterlab.readthedocs.io/en/stable/](https://jupyterlab.readthedocs.io/en/stable/)): next-generation Jupyter Notebook
+
