@@ -19,6 +19,7 @@
 \newcommand{\trans}{\mathrm{T}}
 \newcommand{\diffd}{\mathrm{d}}
 \newcommand{\realR}{\rm I\!R}
+\newcommand{\tr}{\rm tr}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -537,6 +538,25 @@ Combining~\ref{sec:psi_corot} and~\ref{sec:psi_vol} together, we have
 \psi = \mu \Vert \Sigma - I\Vert^2_F + \frac{\lambda}{2} \mathrm{tr}^2(\Sigma - I),
 \end{equation}
 where $\mu$ and $\lambda$ are Lamé coefficients.
+
+
+\subsubsection{Isotropic materials}
+Given two rotations $R_1$, $R_2$ and a deformation gradient $F$, if $\psi(R_1 F R_2) = \psi(R_1 F) = \psi(F)$, then this material is isotropic.
+
+Isotropic invariants are defined by
+\begin{enumerate}
+    \item $I_1 = \tr (F^\trans F)$;
+    \item  $T_2 = \tr ((F^\trans F)^2)$;
+    \item  $J = \mathrm{det}(F)$.
+\end{enumerate}
+
+\subsubsection{Neo-Hookean material}
+The Neo-Hookean material is defined by
+\begin{equation}
+\psi(F) = \frac{\mu}{2}(I_1 - 3) - \mu \log J + \frac{\lambda}{2}\log^2 J
+\end{equation}
+It can be observed that the Neo-Hookean material is incompressible.
+
 
 \section{Fluids and Partial Differential Equations}
 
