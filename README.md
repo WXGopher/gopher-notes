@@ -181,5 +181,6 @@ Awesome material on camera models.
 
 ## Toolchains/Library
 
-Jupyter [Lab]([https://jupyterlab.readthedocs.io/en/stable/](https://jupyterlab.readthedocs.io/en/stable/)): next-generation Jupyter Notebook
+[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/): the next-generation Jupyter Notebook
 
+[Windows Terminal](https://github.com/microsoft/terminal): an awesome terminal emulator for WSL/cmd/Powershell
