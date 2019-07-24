@@ -1,4 +1,4 @@
-gopher-notes
+# gopher-notes
 
 ## Here is what I usually do when I am boring...
 
@@ -8,11 +8,11 @@ Use them at your own risk.
 
 Enjoy :)
 
-| Title                   | Comment                        |
-| ----------------------- | ------------------------------ |
-|     random_notes        | Note's I've made               |
-| web_collected           | Web clippers for nice articles |
-| Awesome_libs_tools.md   | Collections of libs/tools      |
+| Title                 | Comment                        |
+| --------------------- | ------------------------------ |
+| notes                 | Note's I've made               |
+| web_collected         | Web clippers for nice articles |
+| Awesome_libs_tools.md | Collections of libs/tools      |
 
 I also append a list of books/courses that I think worth reading/watching.
 
