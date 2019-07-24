@@ -13,13 +13,11 @@ Enjoy :)
 | [Notes]SICP_in_python.md         | http://composingprograms.com/            |
 | [Notes]The_Linux_Command_Line.md | The linux command line of W. Shotts, Jr. |
 | [Notes]ltxprimer.md              | LaTeX note                               |
-| physics_based_animation          | Ladislav Kavan's     CS6660              |
+| physics_based_animation          | Ladislav Kavan's  CS6660                 |
+| web_collected                    | Web clippers for nice articles           |
+| Awesome_libs_tools.md            | Collections of libs/tools                |
 
 I also append a list of books/courses that I think worth reading/watching.
-
-Update: This document also collects awesome library/toolkits I've found useful.
-
-
 
 ## Books/Documents
 
@@ -178,9 +176,3 @@ Awesome material on camera models.
 
 
 
-
-## Toolchains/Library
-
-[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/): the next-generation Jupyter Notebook
-
-[Windows Terminal](https://github.com/microsoft/terminal): an awesome terminal emulator for WSL/cmd/Powershell
