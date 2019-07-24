@@ -1,4 +1,4 @@
-# gopher-notes
+gopher-notes
 
 ## Here is what I usually do when I am boring...
 
@@ -8,14 +8,11 @@ Use them at your own risk.
 
 Enjoy :)
 
-| Title                            | Comment                                  |
-| -------------------------------- | ---------------------------------------- |
-| [Notes]SICP_in_python.md         | http://composingprograms.com/            |
-| [Notes]The_Linux_Command_Line.md | The linux command line of W. Shotts, Jr. |
-| [Notes]ltxprimer.md              | LaTeX note                               |
-| physics_based_animation          | Ladislav Kavan's  CS6660                 |
-| web_collected                    | Web clippers for nice articles           |
-| Awesome_libs_tools.md            | Collections of libs/tools                |
+| Title                   | Comment                        |
+| ----------------------- | ------------------------------ |
+|     random_notes        | Note's I've made               |
+| web_collected           | Web clippers for nice articles |
+| Awesome_libs_tools.md   | Collections of libs/tools      |
 
 I also append a list of books/courses that I think worth reading/watching.
 
