@@ -1,6 +1,6 @@
-# gopher-notes
+# Gopher-awesomeness
 
-## Here is what I usually do when I am boring...
+### A collections of awesome stuff.
 
 Caution:  these notes by no means are guaranteed to be revised and coherent to the original materials (in fact, you could tell this from my poor writing XD). The way I see it is when I were grilled in an interview, I would go back to this repo and hopefully find out why instead of flipping through thousands of pages of pedantic materials.
 
