@@ -16,6 +16,12 @@ The NEOS (*Network-Enabled Optimization System*) Server is a free internet-based
 
 3D equivalent of [pygame](https://www.pygame.org/news).
 
+> [Python-pathlib](https://docs.python.org/3/library/pathlib.html)
+
+Pythonic way to deal with system path.
+
+
+
 ## Productivity
 
 >  [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/)
