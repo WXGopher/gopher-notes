@@ -20,6 +20,10 @@ The NEOS (*Network-Enabled Optimization System*) Server is a free internet-based
 
 Pythonic way to deal with system path.
 
+> [Python-libigl](https://geometryprocessing.github.io/geometric-computing-python/)
+
+Latest python implementation of libigl and other geometry processing stuff.
+
 
 
 ## Productivity
