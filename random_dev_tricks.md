@@ -1,6 +1,6 @@
 ## Configure VS Code for Linux C++ Project
 
-### Ref:
+#### Ref:
 
 [Using C++ and WSL in VS Code](https://code.visualstudio.com/docs/cpp/config-wsl)
 
@@ -14,32 +14,28 @@
 
 
 
-### VS Code extensions:
+#### Steps:
 
-[CMake tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools), [WSL remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack), VS Code C/C++ extension
+1. Configure WSL:
 
+   ```
+   sudo apt-get update
+   sudo apt-get install build-essential gdb cmake
+   # OpenGL optional
+   sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-common-dev libglew1.5-dev libglm-dev 
+   ```
 
+2. Configure VS Code, install [CMake tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools), [WSL remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack), and VS Code C/C++ extension
 
-### Configure WSL:
+3. In WSL, from project folder, type `code .`
 
-```
-sudo apt-get update
-sudo apt-get install build-essential gdb cmake
-# OpenGL optional
-sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-common-dev libglew1.5-dev libglm-dev 
-```
+4. `F1` -> `CMake: build`
 
-
-
-### Steps:
-
-1. In WSL, from project folder, type `code .`
-2. `F1` -> `CMake: build`
-3. Use `CMake: debug` to debug, remember to configure `launch.json`
+5. Use `CMake: debug` to debug, remember to configure `launch.json`
 
 
 
-## Useful git configs
+## Useful git Configs
 
 ```
 git config --global alias.co checkout
@@ -51,3 +47,9 @@ git config --global alias.st status
 git config --global core.autocrlf true
 ```
 
+
+
+## Random Pro-tips
+
+1. Select venv in Jupyter notebook: `conda install nb_conda_kernels`
+2. [Maya install numpy](https://forums.autodesk.com/t5/maya-programming/guide-how-to-install-numpy-scipy-in-maya-windows-64-bit/td-p/5796722): unzip whl file and copy the folder to `%MAYA_INSTALL_DIR%\Python\Lib\site-packages`
