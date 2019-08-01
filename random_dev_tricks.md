@@ -31,7 +31,7 @@
 
 4. `F1` -> `CMake: build`
 
-5. Use `CMake: debug` to debug, remember to configure `launch.json`
+5. Use `CMake: debug` to debug, remember to configure `launch.json`, more details [here](https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html#debugging).
 
 
 
