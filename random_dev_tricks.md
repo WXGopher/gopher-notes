@@ -33,6 +33,8 @@
 
 5. Use `CMake: debug` to debug, remember to configure `launch.json`, more details [here](https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html#debugging).
 
+6. For graphical applications, you need to forward X, check [this](https://virtualizationreview.com/articles/2018/01/30/hands-on-with-wsl-graphical-apps.aspx) out. After installing any X client, execute `export DISPLAY=:0`
+
 
 
 ## Useful git Configs
