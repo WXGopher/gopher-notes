@@ -57,6 +57,7 @@ git config --global core.autocrlf true
 2. [Maya install numpy](https://forums.autodesk.com/t5/maya-programming/guide-how-to-install-numpy-scipy-in-maya-windows-64-bit/td-p/5796722): unzip whl file and copy the folder to `%MAYA_INSTALL_DIR%\Python\Lib\site-packages`
 3. [Pycharm tricks from zhihu](https://zhuanlan.zhihu.com/p/60383815) (Chinese)
 4. Specify TeX compiler in your document, add `!TEX TS-program = lualatex`
+5. Working with vtk file format, check [this](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) out.
 
 
 
