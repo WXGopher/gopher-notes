@@ -53,7 +53,7 @@ A great material on getting started with working with Linux.
 
 A bit in-depth introduction to Linux/OS internals.
 
-> The LaTeX Primer by Indian TeX Group
+> The LaTeX Tutorial: A Primer by Indian TeX Group
 
 A formal presentation on core TeX features. If you are looking for an introductory material on TeX, this is the one for you.
 
@@ -85,6 +85,10 @@ As C++ being such a pain in the ass, this series introduces C++ programming tric
 
 A step-by-step guide for using CMake.
 
+> [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines)
+
+Best practice from pros.
+
 #### Computer Graphics and Computer Vision
 
 > Fluid Simulation for Computer Graphics by Robert Bridson
@@ -106,6 +110,10 @@ Deformable object, elastic material simulation.
 > Foundations of Physically Based Modeling and Animation by Ronald House and John Keyser
 
 "Physics modelling 101" (mass-spring systems, particle-based systems, deformable object simulations and all you need to know)
+
+> The Art of Fluid Animation by Jos Stam
+
+"Fluid animation 102"
 
 #### Artificial Intelligence and Machine Learning
 
