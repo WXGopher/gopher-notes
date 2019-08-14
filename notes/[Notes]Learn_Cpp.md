@@ -2362,7 +2362,7 @@ Details see http://www.learncpp.com/cpp-tutorial/17-1-stdstring-and-stdwstring/
 
 ##### CH18 I/O
 
-![iostream](C:\Users\wxguo\OneDrive\~data\docs\笔记\figs\iostream.gif)
+![iostream](.\imgs\iostream.gif)
 
 ###### iostream
 
