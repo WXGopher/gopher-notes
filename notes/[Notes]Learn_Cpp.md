@@ -782,14 +782,15 @@ A common use for pointers to pointers is to facilitate dynamically allocated mul
 
 ##### CH7.1 Function parameters and arguments 
 
+This [chapter](https://www.learncpp.com/cpp-tutorial/74a-returning-values-by-value-reference-and-address/) is important.
+
 1. *Passing by value*: used when passing fundamental data type and enumerators, do not use when passing arrays, structs, or classes.
 
-2. *Passing by reference*: *when passing an argument by reference, always use a const references unless you need to change the value of the argument*. Advantages:can be used to return multiple values from a function; must be initialized, so there’s no worry about null values. Disadvantages:  An argument passed by value and passed by reference looks the same in function declaration. (It is hard to tell if the passed value will be changed)
+2. *Passing by reference*: *when passing an argument by reference, always use a `const` references unless you need to change the value of the argument*. Advantages: can be used to return multiple values from a function; must be initialized, so there’s no worry about null values. Disadvantages:  An argument passed by value and passed by reference looks the same in function declaration. (It is hard to tell if the passed value will be changed)
 
 3. *Passing by address*:  **Remember to check null pointers before dereference**. Passing by address is **COPYING** address, i.e., the pointer *will not be modified in the function*. To change the address being passed, use `type func(type *&ptr_to_change)`, `&ptr_to_change` is a reference to the pointer being passed. (Copying address of pointer being passed. Then any modification to `ptr_to_change` will apply to the original pointer.) 
 
 4. So, to sum up: **There is only pass by value** (either value of a variable, or value of address, etc.)
-
 
 *Prefer pass by reference to pass by address whenever applicable.* (as the later one is slower, i.e., needs dereference)
 
@@ -817,7 +818,7 @@ int& returnByReference()
 int main()
 {
     int value = returnByReference(); // case A -- ok, treated as return by value
-    int &ref = returnByValue(); // case B -- compile error
+    int &ref = returnByValue(); // case B -- compile error, the return is an r-value
     const int &cref = returnByValue(); // case C -- ok, the lifetime of return value is extended to the lifetime of cref
 }
 ```
@@ -965,7 +966,7 @@ Remember to check release option in your IDE before setting up preprocessor macr
 ```
 int main(int argc, char *argv[]) // preferred
 or
-int main(int argc, char** argv
+int main(int argc, char** argv)
 ```
 
 `argv[0]` is (on most OS) the path and name of the current program. So `argc`>=1.
@@ -1058,7 +1059,7 @@ int x { 5 }; // Uniform initialization of an integer
 Fraction fiveThirds {5, 3}; // Uniform initialization of a Fraction, calls Fraction(int, int) constructor
 ```
 
-*Do not copy initialize your classes*. (explained in the future)
+*Avoid copy initializing your classes, because it is not efficient.*
 
 Default constructor is only created automatically if no DEFAULT constructor exists.
 
@@ -1194,9 +1195,7 @@ A side note: `this` is actually not a real "pointer". Unlike `*__vptr` that take
 
 #####  CH8.6 Member functions and friend
 
-
-
-*Make any member function that does not modify the state of the class object const*
+*Make any member function that does not modify the state of the class object `const`*
 
 ```
 class Something // If const this class, then getValue has to be set to const
@@ -1243,11 +1242,11 @@ int main()
 
 Note: The static object DEFINITION doesn't subject to private/protected access control. (You can still initialize protected/private static object outside the class)
 
-Put static object in .cpp file not header file will prevent potential multiple definitions (if the header file is included multiple times).
+Put static object in `.cpp` file not header file will prevent potential multiple definitions (if the header file is included multiple times).
 
 Static functions can be used to manipulate static variables without instantiating the class.
 
-C++ doesn't have static constructor, this is a way to do that:
+C++ doesn't have **static constructor**, this is a way to do that:
 
 ```
 class MyClass
@@ -1309,7 +1308,7 @@ Friend classes do not have access to friend's this pointer. Friendship is also n
 1. Overloading cannot be defined if operands are all fundamental types.
 2. Overloaded operator has same precedence as its un-overloaded counterpart.
 
-3 ways for overloading: friend function, member function, normal function.
+3 ways of overloading: friend function, member function, normal function.
 
 The reverse order of overloading can be defined by calling previously defined overloading.
 
@@ -2145,7 +2144,7 @@ int main()
 
 ```
 template <typename T1, typename T2, ...> // Note, use typename and class are equivalent unless you are dealing with template template parameters (use typename) 
-// template function here
+// templated function here
 ```
 
  The function with actual types is called a **function template instance**.
@@ -2157,7 +2156,7 @@ template <typename T1, typename T2, ...> // Note, use typename and class are equ
 Explicit instantiation for class templates (to prevent from linking error in instantiating classes)
 
 ```
-// The template class definition goes in the header. The template class member functions goes in the code file
+// The template class definition goes in the header. The template class member functions goes in the cpp file
 // Ensure the full Array template definition can be seen
 #include "Array.h"
 #include "Array.cpp" // we're breaking best practices here, but only in this one place
@@ -2192,7 +2191,7 @@ void Storage<double>::print() // redefine class member function for type double
 }
 ```
 
-**Functions do not support partial specialization as of C++14**(Only full specialization is permitted, i.e.,explicitly specify all types):
+**Functions do not support partial specialization as of C++14** (Only full specialization is permitted, i.e., explicitly specify all types):
 
 ```
 template<typename T, typename U> void f() {}   //allowed!
@@ -2306,9 +2305,15 @@ Notes on exception:
 * Exceptions should *never* be thrown in destructors
 * Performance issue: exception handling is best used for truly exceptional cases and catastrophic errors, not for routine error handling.
 
-##### CH15 Move sematics and smart pointers
+##### CH15.1 Smart pointers
 
 To be cont'd
+
+
+
+##### CH15.2 Move semantics
+
+
 
 ##### CH16 An intro to STL
 
