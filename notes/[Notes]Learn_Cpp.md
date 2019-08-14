@@ -202,8 +202,8 @@ There’s no satisfactory if/else statement for this, since const variables must
 Directly comparing floating point values using any of these operators is dangerous. This is because small rounding errors in the floating point operands may cause unexpected results.
 
 Knuth suggested the following method in his book “The Art of Computer Programming, Volume II: Seminumerical Algorithms (Addison-Wesley, 1969)”:
-    #include <cmath>
 
+     #include <cmath>
     // return true if the difference between a and b is within epsilon percent of the larger of a and b
     bool approximatelyEqual(double a, double b, double epsilon)
     {
@@ -211,14 +211,14 @@ Knuth suggested the following method in his book “The Art of Computer Programm
     }
 
 The author suggests the following approach
-    // return true if the difference between a and b is less than absEpsilon, or within relEpsilon percent of the larger of a and b
-    bool approximatelyEqualAbsRel(double a, double b, double absEpsilon, double relEpsilon)
-    {
-    // Check if the numbers are really close -- needed when comparing numbers near zero.
-    double diff = fabs(a - b);
-    if (diff <= absEpsilon)
-    return true;
-    
+     // return true if the difference between a and b is less than absEpsilon, or within relEpsilon percent of the larger of a and b
+        bool approximatelyEqualAbsRel(double a, double b, double absEpsilon, double relEpsilon)
+        {
+        // Check if the numbers are really close -- needed when comparing numbers near zero.
+        double diff = fabs(a - b);
+        if (diff <= absEpsilon)
+        return true;
+        
     // Otherwise fall back to Knuth's algorithm
     return diff <= ( (fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * relEpsilon);
     }
@@ -327,7 +327,7 @@ Const casts and reinterpret casts should generally be avoided because they are o
 
 Because C-style casts are not checked by the compiler at compile time, C-style casts can be inherently misused, thus: Avoid C-style casts
 
-The main advantage of `static_cast` is that it provides compile-time type checking, making it harder to make an inadvertent error. `Static_cast` is also (intentionally) less powerful than C-style casts, so you can’t inadvertently remove const or do other things you may not have intended to do.
+The main advantage of `static_cast` is that it provides compile-time type checking, making it harder to make an inadvertent error. `Static_cast` is also (intentionally) less powerful than C-style casts, so you can’t inadvertently remove `const` or do other things you may not have intended to do.
 
 Using casts to make implicit type conversions clear
 
@@ -364,7 +364,7 @@ One big advantage of typedefs is that they can be used to hide platform specific
 
 
 C++ supports a faster way to initialize structs using an **initializer list**    
-​    
+    
     Employee joe = { 1, 32, 60000.0 }; // joe.id = 1, joe.age = 32, joe.wage = 60000.0
     Employee frank = { 2, 28 }; // frank.id = 2, frank.age = 28, frank.wage = 0.0 (default initialization)
 
@@ -385,11 +385,9 @@ A function can also return a struct, which is one of the few ways to have a func
 
 >Rule: Avoid use of goto statements unless necessary
 
-for (init-statement; condition-expression; end-expression)
-   statement;
 
 The easiest way to understand a for loop 
-​    
+
     	for (init-statement; condition-expression; end-expression)
        	statement;
 
@@ -461,8 +459,8 @@ int getRandomNumber(int min, int max)
 
 ##### CH6.1 Size of
 
-The sizeof operator can be used on arrays, and it will return the total size of the array (array length multiplied by element size). Note that due to the way C++ passes arrays to functions, this will **not** work properly for arrays that have been passed to functions!
-​    
+The `sizeof` operator can be used on arrays, and it will return the total size of the array (array length multiplied by element size). Note that due to the way C++ passes arrays to functions, this will **not** work properly for arrays that have been passed to functions!
+    
     void printSize(int array[])
     {
     std::cout << sizeof(array) << '\n'; // prints the size of a pointer, not the size of the array!
