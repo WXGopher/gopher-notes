@@ -2305,13 +2305,42 @@ Notes on exception:
 * Exceptions should *never* be thrown in destructors
 * Performance issue: exception handling is best used for truly exceptional cases and catastrophic errors, not for routine error handling.
 
-##### CH15.1 Smart pointers
+##### CH15 Smart pointers and Move semantics
 
-To be cont'd
+An **l-value** (also called a locator value) as a function or an object (or an expression that evaluates to a function or object). **All l-values have assigned memory addresses**, all rest are r-values. r-values are typically evaluated for their values, have expression scope (they die at the end of the expression they are in), and cannot be assigned to. More on l/r values see [this](https://en.cppreference.com/w/cpp/language/value_category).
+
+| L-value reference       | Can be initialized with | Can modify |
+| :---------------------- | :---------------------- | :--------- |
+| Modifiable l-values     | Yes                     | Yes        |
+| Non-modifiable l-values | No                      | No         |
+| R-values                | No                      | No         |
+
+| L-value reference to const | Can be initialized with | Can modify |
+| :------------------------- | :---------------------- | :--------- |
+| Modifiable l-values        | Yes                     | No         |
+| Non-modifiable l-values    | Yes                     | No         |
+| R-values                   | Yes                     | No         |
+
+| R-value reference       | Can be initialized with | Can modify |
+| :---------------------- | :---------------------- | :--------- |
+| Modifiable l-values     | No                      | No         |
+| Non-modifiable l-values | No                      | No         |
+| R-values                | Yes                     | Yes        |
+
+| R-value reference to const | Can be initialized with | Can modify |
+| :------------------------- | :---------------------- | :--------- |
+| Modifiable l-values        | No                      | No         |
+| Non-modifiable l-values    | No                      | No         |
+| R-values                   | Yes                     | No         |
+
+R-value references：
+
+1. extend the lifespan of the object they are initialized with to the lifespan of the r-value reference (l-value references to const objects can do this too)
+2. non-const r-value references allow you to modify the r-value
+
+You should almost never return an r-value reference, for the same reason you should almost never return an l-value reference. 
 
 
-
-##### CH15.2 Move semantics
 
 
 
