@@ -58,6 +58,7 @@ git config --global core.autocrlf true
 3. [Pycharm tricks from zhihu](https://zhuanlan.zhihu.com/p/60383815) (Chinese)
 4. Specify TeX compiler in your document, add `!TEX TS-program = lualatex`
 5. Working with vtk file format, check [this](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) out.
+6. Linux is case-sensitive but Windows is not, it may cause problem with cross-platform code. [Here](https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/) is a solution to make windows folders case-sensitive.
 
 
 
