@@ -1,6 +1,6 @@
 ## Configure VS Code for Linux C++ Project
 
-#### Ref:
+Ref:
 
 [Using C++ and WSL in VS Code](https://code.visualstudio.com/docs/cpp/config-wsl)
 
@@ -13,28 +13,24 @@
 [C++ Development using Visual Studio Code, CMake and LLDB](https://medium.com/audelabs/c-development-using-visual-studio-code-cmake-and-lldb-d0f13d38c563)
 
 
+Steps:
 
-#### Steps:
+1. Install VS Code extensions: WSL remote development, C/C++ extension **in Windows**;
+2. Configure WSL:
 
-1. Configure WSL:
+```
+sudo apt-get update
+sudo apt-get install build-essential gdb cmake
+sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-common-dev libglew1.5-dev libglm-dev #OpenGL optional
+```
 
-   ```
-   sudo apt-get update
-   sudo apt-get install build-essential gdb cmake
-   # OpenGL optional
-   sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-common-dev libglew1.5-dev libglm-dev 
-   ```
+3. Install X client (`xming` for example), then forward X using `export DISPLAY=:0`;
 
-2. Configure VS Code, install [CMake tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools), [WSL remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack), and VS Code C/C++ extension
+4. Configure `launch.json` for your project;
 
-3. In WSL, from project folder, type `code .`
+5. In **WSL**, from project folder, type `code .`.
 
-4. `F1` -> `CMake: build`
-
-5. Use `CMake: debug` to debug, remember to configure `launch.json`, more details [here](https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html#debugging).
-
-6. For graphical applications, you need to forward X, check [this](https://virtualizationreview.com/articles/2018/01/30/hands-on-with-wsl-graphical-apps.aspx) out. After installing any X client, execute `export DISPLAY=:0`
-
+   
 
 
 ## Useful git Configs

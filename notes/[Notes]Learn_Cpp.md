@@ -63,7 +63,7 @@ Note: the chapter numbers may not coincide with the website due to website updat
    * [Expression parameters](#expression-parameters)
    * [Function/class template specialization](#functionclass-template-specialization)
 * [CH14 Exceptions](#ch14-exceptions)
-* [CH15 Move sematics and smart pointers](#ch15-move-sematics-and-smart-pointers)
+* [CH15 Move sematics and smart pointers](#ch15-move-semantics-and-smart-pointers)
 * [CH16 An intro to STL](#ch16-an-intro-to-stl)
    * [Containers](#containers)
    * [Iterators](#iterators)
