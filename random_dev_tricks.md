@@ -52,7 +52,7 @@ git config --global core.autocrlf true
 1. Select venv in Jupyter notebook: `conda install nb_conda_kernels`
 2. [Maya install numpy](https://forums.autodesk.com/t5/maya-programming/guide-how-to-install-numpy-scipy-in-maya-windows-64-bit/td-p/5796722): unzip whl file and copy the folder to `%MAYA_INSTALL_DIR%\Python\Lib\site-packages`
 3. [Pycharm tricks from zhihu](https://zhuanlan.zhihu.com/p/60383815) (Chinese)
-4. Specify TeX compiler in your document, add `!TEX TS-program = lualatex`
+4. Specify TeX compiler in your document, add `!TEX TS-program = lualatex`. This directive is understood by most TeX IDEs. More TeX directives see [here](https://tex.stackexchange.com/questions/78101/when-and-why-should-i-use-tex-ts-program-and-tex-encoding).
 5. Working with vtk file format, check [this](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) out.
 6. Linux is case-sensitive but Windows is not, it may cause problem with cross-platform code. [Here](https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/) is a solution to make windows folders case-sensitive.
 
