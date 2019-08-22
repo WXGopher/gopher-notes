@@ -2340,6 +2340,69 @@ R-value references：
 
 You should almost never return an r-value reference, for the same reason you should almost never return an l-value reference. 
 
+The move constructor and move assignment are called when those functions have been defined, and the argument for construction or assignment is an *r-value*. Most typically, this r-value will be a *literal* or *temporary value*.
+
+*Rule: If you want a move constructor and move assignment that do moves, you’ll need to write them yourself.*
+
+Example: comparing copy/move constructor/assignment
+
+```c++
+	// Copy constructor
+    // Member: T* m_ptr
+	// Do deep copy of a.m_ptr to m_ptr
+	Auto_ptr4(const Auto_ptr4& a)
+	{
+		m_ptr = new T;
+		*m_ptr = *a.m_ptr;
+	}
+ 
+	// Move constructor
+	// Transfer ownership of a.m_ptr to m_ptr
+	Auto_ptr4(Auto_ptr4&& a)
+		: m_ptr(a.m_ptr)
+	{
+		a.m_ptr = nullptr; 
+	}
+ 
+	// Copy assignment
+	// Do deep copy of a.m_ptr to m_ptr
+	Auto_ptr4& operator=(const Auto_ptr4& a)
+	{
+		// Self-assignment detection
+		if (&a == this)
+			return *this;
+ 
+		// Release any resource we're holding
+		delete m_ptr;
+ 
+		// Copy the resource
+		m_ptr = new T;
+		*m_ptr = *a.m_ptr;
+ 
+		return *this;
+	}
+ 
+	// Move assignment
+	// Transfer ownership of a.m_ptr to m_ptr
+	Auto_ptr4& operator=(Auto_ptr4&& a)
+	{
+		// Self-assignment detection
+		if (&a == this)
+			return *this;
+ 
+		// Release any resource we're holding
+		delete m_ptr;
+ 
+		// Transfer ownership of a.m_ptr to m_ptr
+		m_ptr = a.m_ptr;
+		a.m_ptr = nullptr; 
+ 
+		return *this;
+	}
+```
+
+
+
 
 
 

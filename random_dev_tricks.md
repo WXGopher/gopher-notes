@@ -24,7 +24,7 @@ sudo apt-get install build-essential gdb cmake
 sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-common-dev libglew1.5-dev libglm-dev #OpenGL optional
 ```
 
-3. Install X client (`xming` for example), then forward X using `export DISPLAY=:0`;
+3. Install X client (`xming` for example, then forward X using `export DISPLAY=:0`; a modern X client is [mobaxterm](https://mobaxterm.mobatek.net/features.html)
 
 4. Configure `launch.json` for your project;
 
