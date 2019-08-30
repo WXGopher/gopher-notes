@@ -24,6 +24,10 @@ Pythonic way to deal with system path.
 
 Latest python implementation of libigl and other geometry processing stuff.
 
+> [CuPy](https://cupy.chainer.org/)
+
+A NumPy-compatible matrix library accelerated by CUDA
+
 
 
 ## Productivity
