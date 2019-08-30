@@ -26,15 +26,21 @@ Latest python implementation of libigl and other geometry processing stuff.
 
 > [CuPy](https://cupy.chainer.org/)
 
-A NumPy-compatible matrix library accelerated by CUDA
-
-
-
-## Productivity
+A NumPy-compatible matrix library accelerated by CUDA.
 
 >  [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/)
 
 The next-generation Jupyter Notebook.
+
+> [MantaFlow](http://mantaflow.com/)
+
+An extensible framework for fluid simulation.
+
+
+
+
+
+## Dev and productivity
 
 >  [Windows Terminal](https://github.com/microsoft/terminal)
 
@@ -51,3 +57,7 @@ Boosting your efficiency by 1000%.
 > [Qdir](https://www.softwareok.com/?seite=Freeware/Q-Dir)
 
 If you have a pretty big monitor, you'll like it.
+
+> [MobaXTerm](https://mobaxterm.mobatek.net/)
+
+Modern X11 server for Windows.
