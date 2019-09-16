@@ -150,6 +150,10 @@ Rank up to graduate level analysis through completing this book series :)
 
 An informal presentation on the Differential Dynamical Systems. You can also find a looooot of anecdotes of those lovely mathemagitians.
 
+> Calculus on Manifolds by Michael Spivak
+
+Awesome introductory material.
+
 #### Applied Mathematics
 
 > Numerical Solution of Time-Dependent Advection-Diffusion-Reaction Equations by Jan Verwer and Williem Hundsdorfer
@@ -188,5 +192,6 @@ Quite a contingent material if you are doing this.
 
 Awesome material on camera models.
 
+> The Material Point Method for Simulating Continuum Materials by Chenfanfu Jiang
 
-
+MPM 101
