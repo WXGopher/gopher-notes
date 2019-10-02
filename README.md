@@ -194,4 +194,8 @@ Awesome material on camera models.
 
 > The Material Point Method for Simulating Continuum Materials by Chenfanfu Jiang
 
-MPM 101
+MPM 101.
+
+> A Primer on the Kinematics of Discrete Elastic Rods by A. Novelia et al
+
+Illustrative material on discrete elastic rods for simulating strands.
