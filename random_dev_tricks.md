@@ -8,7 +8,7 @@
 
 4. Specify TeX compiler in your document, add `!TEX TS-program = lualatex`. This directive is understood by most TeX IDEs. More TeX directives see [here](https://tex.stackexchange.com/questions/78101/when-and-why-should-i-use-tex-ts-program-and-tex-encoding);
 
-5. Working with vtk file format, check [this](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) out
+5. Working with vtk file format, check [this](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) out;
 
 6. Setup `cron` on WSL:
 
@@ -22,7 +22,9 @@
    crontab -e
    ```
 
-   
+7. While annotating a codebase (C++ for example), in Visual Studio, change color of `XML Doc Comment` (in Tools->Options->Environment->Fonts and Colors). Start annotation using `///` instead of regular comment `//`;
+
+8. 
 
 
 
