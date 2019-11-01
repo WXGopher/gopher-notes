@@ -37,6 +37,16 @@
 
 
 
+## Copy and paste programming from Stackoverflow
+
+Find and replace a string in multiple files using `find` and `sed` (note the trailing `\;`):
+
+```
+find /home/user/directory -name \*.c -exec sed -i "s/cybernetnews/cybernet/g" {} \;
+```
+
+
+
 ## Misc.
 
 ### Configure VS Code for Linux C++ Project
