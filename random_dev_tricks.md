@@ -82,7 +82,8 @@ sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-com
 
    
 
-### Useful git Configs
+### Useful Configs
+#### git
 
 ```
 git config --global alias.co checkout
@@ -92,5 +93,15 @@ git config --global alias.st status
 
 # For cross-platform between windows and POSIX systems
 git config --global core.autocrlf true
+```
+
+#### sublime
+
+```
+{
+	"font_size": 13,
+    "word_wrap": "true",
+    "match_brackets_angle": true // especially for dealing with ugly stl output...
+}
 ```
 
