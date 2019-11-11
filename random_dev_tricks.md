@@ -37,7 +37,7 @@
 
 
 
-## Copy and paste programming from Stackoverflow
+## Copy-and-paste programming from Stackoverflow
 
 Find and replace a string in multiple files using `find` and `sed` (note the trailing `\;`):
 
