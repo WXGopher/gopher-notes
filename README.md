@@ -172,6 +172,10 @@ A classical reference on numerical eigenvalue problems with plentiful examples.
 
 This book is derived from (an excellent course) [EE364](http://ee364a.stanford.edu) from Stanford.
 
+> Computational Science and Engineering by Gilbert Strang
+
+Modern computational mathematics for engineers. [MIT 18.086]( https://ocw.mit.edu/courses/mathematics/18-086-mathematical-methods-for-engineers-ii-spring-2006/readings/ ) is also a great course on this topic.
+
 
 
 ## Lecture Notes/Courses
