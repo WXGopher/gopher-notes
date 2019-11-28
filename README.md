@@ -89,6 +89,10 @@ A step-by-step guide for using CMake.
 
 Best practice from pros.
 
+>  C++ Templates: The Complete Guide by D. Vandevoorde and N.M. Josuttis
+
+Magic behind C++ generic programming.
+
 #### Computer Graphics and Computer Vision
 
 > Fluid Simulation for Computer Graphics by Robert Bridson
@@ -203,3 +207,7 @@ MPM 101.
 > A Primer on the Kinematics of Discrete Elastic Rods by A. Novelia et al
 
 Illustrative material on discrete elastic rods for simulating strands.
+
+> [Discrete Differential Geometry: an Applied Introduction]( https://www.cs.cmu.edu/~kmcrane/Projects/DDG/ ) by Keenan Crane
+
+For Geometry processing.
