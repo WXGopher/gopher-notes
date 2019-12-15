@@ -8,7 +8,8 @@ Caution:  these notes by no means are guaranteed to be revised and coherent to t
 
 I also append a list of books/courses that I think worth reading/watching.
 
-
+Table of Contents
+=================
 
    * [Gopher-awesomeness](#gopher-awesomeness)
       * [Books/Documents](#booksdocuments)
@@ -20,10 +21,7 @@ I also append a list of books/courses that I think worth reading/watching.
          * [Mathematics](#mathematics)
             * [Pure Mathematics](#pure-mathematics)
             * [Applied Mathematics](#applied-mathematics)
-      * [Lecture Notes/Courses](#lecture-notescourses)
-
-
-
+      * [Lecture notes, courses, and short articles](#lecture-notes-courses-and-short-articles)
 
 ## Books/Documents
 
@@ -212,6 +210,6 @@ Illustrative material on discrete elastic rods for simulating strands.
 
 For Geometry processing.
 
-> [git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out#fn:5)
+> [git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
 
 Awesome explanation on git.
