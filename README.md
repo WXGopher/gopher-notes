@@ -182,7 +182,7 @@ Modern computational mathematics for engineers. [MIT 18.086]( https://ocw.mit.ed
 
 
 
-## Lecture Notes/Courses
+## Lecture notes, courses, and short articles
 
 > [FEM Simulation of 3D Deformable Solids: A practitioner's guide to theory, discretization and model reduction](http://femdefo.org/)
 
@@ -211,3 +211,7 @@ Illustrative material on discrete elastic rods for simulating strands.
 > [Discrete Differential Geometry: an Applied Introduction]( https://www.cs.cmu.edu/~kmcrane/Projects/DDG/ ) by Keenan Crane
 
 For Geometry processing.
+
+> [git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out#fn:5)
+
+Awesome explanation on git.
