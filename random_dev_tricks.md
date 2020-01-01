@@ -24,7 +24,16 @@
 
 7. While annotating a codebase (C++ for example), in Visual Studio, change color of `XML Doc Comment` (in Tools->Options->Environment->Fonts and Colors). Start annotation using `///` instead of regular comment `//`;
 
-8. 
+8. How to set up CUDA integration in existing Visual Studio project:
+
+   1. right click project -> build dependencies -> build customizations, check CUDA [link]( https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#build-customizations-for-existing-projects )
+   2. check environmental variables (should automatically be set when CUDA was installed correctly)
+   3. set up C/C++ additional include directories: `$(ProjectDir)\include;$(IncludePath);$(CudaToolkitDir)include`
+   4. set up linker: additional library directories: `%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)`
+   5. set up linker: additional dependencies, add cublas.lib;cudart_static.lib
+   6. right click your file containing kernel code, in `properties -> general`, set the item type to `CUDA C/C++`
+   7. for CUBLAS users, set CUDA C/C++ -> common, set target machine to `64-bit (--machine 64)`
+   8. ` #include "device_launch_parameters.h"` to fix intellisense issues with CUDA
 
 
 
@@ -39,7 +48,7 @@
 
 ## Copy-and-paste programming from Stackoverflow
 
-Find and replace a string in multiple files using `find` and `sed` (note the trailing `\;`):
+1. Find and replace a string in multiple files using `find` and `sed` (note the trailing `\;`):
 
 ```
 find /home/user/directory -name \*.c -exec sed -i "s/cybernetnews/cybernet/g" {} \;
