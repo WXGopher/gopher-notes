@@ -213,3 +213,7 @@ For Geometry processing.
 > [git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
 
 Awesome explanation on git.
+
+> [How C++ Works: Understanding Compilation](https://www.toptal.com/c-plus-plus/c-plus-plus-understanding-compilation)
+
+Thorough explanation on compiling/linking for C++ projects.
