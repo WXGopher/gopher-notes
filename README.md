@@ -204,11 +204,11 @@ MPM 101.
 
 > A Primer on the Kinematics of Discrete Elastic Rods by A. Novelia et al
 
-Illustrative material on discrete elastic rods for simulating strands.
+Illustrative material on discrete elastic rods/ discrete viscous threads for simulating strands.
 
 > [Discrete Differential Geometry: an Applied Introduction]( https://www.cs.cmu.edu/~kmcrane/Projects/DDG/ ) by Keenan Crane
 
-For Geometry processing.
+For Geometry processing, and spoiler alert: you'll enjoy a great time reading it ::smile:
 
 > [git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
 
