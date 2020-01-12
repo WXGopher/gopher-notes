@@ -61,3 +61,11 @@ If you have a pretty big monitor, you'll like it.
 > [MobaXTerm](https://mobaxterm.mobatek.net/)
 
 Modern X11 server for Windows.
+
+> WGestures
+
+Global mouse gesture on Win10.
+
+> Quicklook
+
+Preview file contents.
