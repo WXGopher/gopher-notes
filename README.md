@@ -182,6 +182,8 @@ Modern computational mathematics for engineers. [MIT 18.086]( https://ocw.mit.ed
 
 ## Lecture notes, courses, and short articles
 
+### Graphics
+
 > [FEM Simulation of 3D Deformable Solids: A practitioner's guide to theory, discretization and model reduction](http://femdefo.org/)
 
 Continuum mechanics for computer graphics.
@@ -193,10 +195,6 @@ Physics simulation 101.
 > Physics based animation by Ladislav Kavan
 
 Quite a contingent material if you are doing this.
-
-> [Computer Vision IT412](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT10/lect10.html)
-
-Awesome material on camera models.
 
 > The Material Point Method for Simulating Continuum Materials by Chenfanfu Jiang
 
@@ -210,6 +208,22 @@ Illustrative material on discrete elastic rods/ discrete viscous threads for sim
 
 For Geometry processing, and spoiler alert: you'll enjoy a great time reading it ::smile:
 
+> [Differential Geometry for Computer Science](https://graphics.stanford.edu/courses/cs468-13-spring/schedule.html)
+
+Surfaces, curves, exterior calculus.... and all that shit.
+
+
+
+
+
+### Misc.
+
+
+> [Computer Vision IT412](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT10/lect10.html)
+
+Awesome material on camera models.
+
+
 > [git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
 
 Awesome explanation on git.
@@ -218,6 +232,3 @@ Awesome explanation on git.
 
 Thorough explanation on compiling/linking for C++ projects.
 
-> [Differential Geometry for Computer Science](https://graphics.stanford.edu/courses/cs468-13-spring/schedule.html)
-
-Surfaces, curves, exterior calculus.... and all that shit.
