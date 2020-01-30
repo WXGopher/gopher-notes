@@ -217,3 +217,7 @@ Awesome explanation on git.
 > [How C++ Works: Understanding Compilation](https://www.toptal.com/c-plus-plus/c-plus-plus-understanding-compilation)
 
 Thorough explanation on compiling/linking for C++ projects.
+
+> [Differential Geometry for Computer Science](https://graphics.stanford.edu/courses/cs468-13-spring/schedule.html)
+
+Surfaces, curves, exterior calculus.... and all that shit.
