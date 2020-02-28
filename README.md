@@ -212,7 +212,9 @@ For Geometry processing, and spoiler alert: you'll enjoy a great time reading it
 
 Surfaces, curves, exterior calculus.... and all that shit.
 
+>  [How does a Rendering Engine work? An overview](https://www.haroldserrano.com/blog/how-to-develop-a-rendering-engine-an-overview)
 
+OpenGL shading pipeline walkthrough.
 
 
 
