@@ -34,6 +34,8 @@
    6. right click your file containing kernel code, in `properties -> general`, set the item type to `CUDA C/C++`
    7. for CUBLAS users, set CUDA C/C++ -> common, set target machine to `64-bit (--machine 64)`
    8. ` #include "device_launch_parameters.h"` to fix intellisense issues with CUDA
+   
+9. A way better downloading tool than `wget` is [axel](http://manpages.ubuntu.com/manpages/trusty/man1/axel.1.html). 
 
 
 
