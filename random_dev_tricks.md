@@ -34,15 +34,39 @@
    6. right click your file containing kernel code, in `properties -> general`, set the item type to `CUDA C/C++`
    7. for CUBLAS users, set CUDA C/C++ -> common, set target machine to `64-bit (--machine 64)`
    8. ` #include "device_launch_parameters.h"` to fix intellisense issues with CUDA
+   
+9. A way better downloading tool than `wget` is [axel](http://manpages.ubuntu.com/manpages/trusty/man1/axel.1.html). 
 
 
 
 ## Misc troubleshooting
 
 1. WSL doesn't start on win10. [Solution](https://superuser.com/questions/1275505/wsl-bash-doesnt-start);
+
 2. `xelatex` running slow. Try to delete `texlive/${version}/texmf-var/fonts/cache;`
+
 3. If debugger fails to stop at breakpoint, maybe you forgot to generate debugging symbol (duh..., to verify this, use [objdump](https://stackoverflow.com/questions/3284112/how-to-check-if-program-was-compiled-with-debug-symbols));
+
 4. Linux is case-sensitive but Windows is not, it may cause problem with cross-platform code. [Here](https://www.howtogeek.com/354220/how-to-enable-case-sensitive-folders-on-windows-10/) is a solution to make windows folders case-sensitive
+
+5. Fix git connection issues on WSL:
+
+   ```
+   touch ~/.ssh/config
+   chmod 755 ~/.ssh/config
+   sudo nano ~/.ssh/config
+   # add the following to this config
+   Host github.com
+     Hostname ssh.github.com
+     Port 22
+     
+   # restart ssh
+   sudo /etc/init.d/ssh restart
+   # verify
+   ssh -T git@github.com
+   ```
+
+   
 
 
 
