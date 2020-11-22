@@ -117,6 +117,10 @@ Deformable object, elastic material simulation.
 
 "Fluid animation 102"
 
+> Real Time Collision Detection by Christer Ericson
+
+Literally speaking, every popular game engine contains code snippets from this book.
+
 #### Artificial Intelligence and Machine Learning
 
 > Reinforcement Learning by David Silver
