@@ -50,7 +50,7 @@ An awesome terminal emulator for WSL/cmd/Powershell.
 
 Beautiful and lightweight command emulator.
 
-> [Listray](https://www.listary.com/)
+> [Listary](https://www.listary.com/)
 
 Boosting your efficiency by 1000%.
 
