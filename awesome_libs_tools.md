@@ -69,3 +69,7 @@ Global mouse gesture on Win10.
 > Quicklook
 
 Preview file contents.
+
+> [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
+
+R.I.P. to grep.
