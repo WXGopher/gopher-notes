@@ -73,3 +73,7 @@ Preview file contents.
 > [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 
 R.I.P. to grep.
+
+> TabNine
+
+AI-driven code completion (for sublime, VS Code, etc.)
