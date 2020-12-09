@@ -77,3 +77,7 @@ R.I.P. to grep.
 > TabNine
 
 AI-driven code completion (for sublime, VS Code, etc.)
+
+> [WinDBG](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
+
+[Time travel debugging](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/time-travel-debugging-record) for Windows
