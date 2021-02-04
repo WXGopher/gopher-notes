@@ -81,3 +81,7 @@ AI-driven code completion (for sublime, VS Code, etc.)
 > [WinDBG](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
 
 [Time travel debugging](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/time-travel-debugging-record) for Windows
+
+> [Meld](http://meldmerge.org)
+
+Free/cross-platform visual diff/merge tool.
