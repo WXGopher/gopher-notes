@@ -116,16 +116,28 @@ sudo apt-get install freeglut3  freeglut3-dev binutils-gold libglew-dev mesa-com
    
 
 ### Useful Configs
-#### git
+#### My git config:
 
 ```
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-
-# For cross-platform between windows and POSIX systems
-git config --global core.autocrlf true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	dt = difftool -d
+[core]
+	autocrlf = true
+[user]
+	email = xxx
+	name = xxx
+# Make sure you have meld installed
+[diff] 
+	tool = meld
+	guitool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld \"$LOCAL\" \"$REMOTE\"
 ```
 
 #### sublime
